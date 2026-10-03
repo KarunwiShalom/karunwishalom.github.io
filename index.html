@@ -1,0 +1,1636 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shalom Karunwi: Strategy and Energy Analyst</title>
+<meta name="description" content="Shalom Karunwi is a strategy and energy analyst working on Nigeria's power sector. Author of the Nigeria Power Sector Intelligence Report and designer of the Nextier Power Sector Market Index.">
+<meta property="og:title" content="Shalom Karunwi: Strategy and Energy Analyst">
+<meta property="og:description" content="Research, technical work and speaking on Nigeria's power sector.">
+<meta property="og:image" content="files/portrait.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2322262A'/%3E%3Cpath d='M16 4 L10 28 M16 4 L22 28 M7 11 H25 M9 17 H23' stroke='%23E8EBE8' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --desk:#F4ECE2; --text:#2B211C;
+  --display:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+/* One warm theme per sheet. --tone colours the desk around the folder and the flaps; --frame colours the folder's outlines. Content inside the page stays black and white. */
+.t-home{--tone:#F6D2AE;--frame:#8A3A0E}
+.t-research{--tone:#F0D98A;--frame:#6A4C00}
+.t-technical{--tone:#F3BDAA;--frame:#93301E}
+.t-speaking{--tone:#EEBFCB;--frame:#7F2346}
+.t-about{--tone:#E3CDAA;--frame:#5E4226}
+.t-contact{--tone:#F7C67E;--frame:#7C4300}
+@media (prefers-color-scheme:dark){
+  .t-home{--tone:#4A2A18;--frame:#F7C39A}
+  .t-research{--tone:#3F3312;--frame:#EBCB6A}
+  .t-technical{--tone:#4A251C;--frame:#F4A893}
+  .t-speaking{--tone:#44222E;--frame:#EFA5BC}
+  .t-about{--tone:#3A2D20;--frame:#E2C49C}
+  .t-contact{--tone:#47300F;--frame:#F5BE6E}
+}
+.page,.flap,.viewer{--sheet:#FFFFFF;--ink:#1B1B1B;--muted:#6F6F6F;--faint:#DCDCDA;--paper:#F4F4F2}
+@media (prefers-color-scheme:dark){
+  .page,.flap,.viewer{--sheet:#161616;--ink:#F0F0F0;--muted:#A3A3A3;--faint:#3A3A3A;--paper:#202020}
+}
+body{
+  margin:0;color:var(--text);background-color:var(--tone,var(--desk));transition:background-color .6s ease;
+  font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration-color:currentColor;text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{color:var(--ink)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+img,iframe,svg{max-width:100%}
+.page strong,.page b{color:var(--ink)}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Book */
+.book{max-width:1200px;margin:0 auto;padding:28px 24px 48px}
+.flaps{display:flex;gap:4px;padding:6px 18px 0;overflow-x:auto;scrollbar-width:none;position:relative;z-index:4}
+.flaps::-webkit-scrollbar{display:none}
+.flap{
+  flex:0 0 auto;font-family:var(--display);font-size:16px;text-decoration:none;color:var(--frame);
+  background:var(--tone);border:1px solid var(--frame);border-bottom:none;border-radius:6px 6px 0 0;
+  padding:9px 18px 9px;margin-bottom:-1px;
+  position:relative;top:5px;transition:top .2s ease,background-color .2s ease;
+}
+.flap b{font-weight:700;color:var(--frame);margin-right:7px}
+.flap:hover{top:0}
+.flap[aria-current="page"]{background:var(--sheet);color:var(--ink);border-color:var(--frame);top:0;z-index:2;padding-bottom:10px;margin-bottom:-2px}
+.flap[aria-current="page"] b{color:var(--frame)}
+.flap:focus-visible{outline-offset:-4px}
+
+.pages{position:relative;perspective:2600px;perspective-origin:0% 40%}
+.page{
+  display:none;background:var(--sheet);border:1px solid var(--frame);box-shadow:inset 0 0 0 6px var(--sheet),inset 0 0 0 7px var(--frame);
+  transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+}
+.page.is-active{display:block;position:relative}
+.page.turn-out,.page.turn-in{display:block;position:absolute;top:0;left:0;right:0;z-index:3;will-change:transform}
+.page.turn-out{animation:turnOut .95s cubic-bezier(.5,.05,.35,1) forwards}
+.page.turn-in{animation:turnIn .95s cubic-bezier(.5,.05,.35,1) forwards}
+.page.turn-out::after,.page.turn-in::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.18));animation:shade .95s ease forwards}
+.page.turn-in::after{animation-direction:reverse}
+@keyframes turnOut{from{transform:rotateY(0)}to{transform:rotateY(-112deg)}}
+@keyframes turnIn{from{transform:rotateY(-112deg)}to{transform:rotateY(0)}}
+@keyframes shade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .page.turn-out,.page.turn-in{animation:none}
+  .page.turn-out{display:none}
+  .page.turn-out::after,.page.turn-in::after{display:none}
+}
+
+.sheet-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;padding:24px 32px 18px;border-bottom:1px solid var(--frame)}
+.sheet-no{font-family:var(--display);font-weight:700;font-size:17px;color:var(--frame)}
+.sheet-head h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.05;margin:0;letter-spacing:-.035em;color:var(--ink)}
+.sheet-head h2:focus{outline:none}
+.sheet-head p{font-family:var(--display);font-size:16px;color:var(--muted);margin:0 0 0 auto}
+.sheet-body{padding:32px}
+
+/* Title block closes every page */
+.titleblock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.3fr);border-top:1px solid var(--frame)}
+.titleblock > div,.titleblock > a{padding:12px 16px;border-right:1px solid var(--frame);font-family:var(--display);font-size:16px;line-height:1.3}
+.titleblock > :last-child{border-right:none}
+.titleblock span{display:block;color:var(--muted);font-size:14px}
+.titleblock a.turn{text-decoration:none;background:var(--frame);color:var(--sheet);display:flex;flex-direction:column;justify-content:center}
+.titleblock a.turn span{color:color-mix(in srgb,var(--sheet) 75%,var(--frame))}
+.titleblock a.turn:hover{background:var(--ink);color:var(--sheet)}
+.titleblock a.turn:hover span{color:var(--sheet)}
+
+/* Photos */
+.photo{position:relative;background:var(--paper);overflow:hidden;margin:0}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo .ph{display:none}
+.photo.missing{background:
+  linear-gradient(to top right,transparent calc(50% - .6px),var(--muted) calc(50% - .6px),var(--muted) calc(50% + .6px),transparent calc(50% + .6px)),
+  linear-gradient(to bottom right,transparent calc(50% - .6px),var(--muted) calc(50% - .6px),var(--muted) calc(50% + .6px),transparent calc(50% + .6px)),var(--paper)}
+.photo.missing img{visibility:hidden}
+.photo.missing .ph{display:block;position:absolute;left:12px;bottom:10px;right:12px;font-family:var(--display);font-size:14px;color:var(--muted);background:var(--paper);padding:2px 6px;width:max-content;max-width:calc(100% - 24px)}
+figcaption{font-family:var(--display);font-size:15px;color:var(--muted);margin-top:8px}
+
+/* A-01 Home */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;align-items:center;padding:40px 32px 36px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(54px,8.4vw,118px);line-height:.88;letter-spacing:-.05em;margin:0 0 24px;color:var(--ink)}
+.hero h1 span{display:block}
+.hero h1:focus{outline:none}
+.role{font-family:var(--display);font-weight:600;color:var(--ink);font-size:clamp(19px,2vw,23px);margin:0 0 14px}
+.lede{max-width:36ch;font-size:19px;line-height:1.6;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font-family:var(--display);font-weight:600;font-size:17px;display:inline-block;padding:10px 18px;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--sheet)}
+.btn.solid:hover{background:var(--frame);border-color:var(--frame);color:var(--sheet)}
+.btn:hover{color:var(--ink)}
+.portrait{position:relative;margin:0;aspect-ratio:560/600}
+.portrait .photo{position:absolute;left:7.14%;top:6.67%;width:64.29%;height:75%}
+.portrait svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.dims .dim{fill:none;stroke:var(--ink);stroke-width:1.2}
+.dims .frame{fill:none;stroke:var(--ink);stroke-width:1.4}
+.dims text{font-family:var(--display);font-size:17px;fill:var(--ink)}
+.dims text.big{font-weight:700;font-size:32px;fill:var(--ink)}
+.dims text.note{fill:var(--muted);font-size:15px}
+.draw .dim{stroke-dasharray:1;stroke-dashoffset:1;animation:ink 1.3s cubic-bezier(.6,.1,.3,1) .3s forwards}
+.draw text{opacity:0;animation:appear .6s ease 1.2s forwards}
+@keyframes ink{to{stroke-dashoffset:0}}
+@keyframes appear{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.draw .dim{animation:none;stroke-dasharray:none}.draw text{animation:none;opacity:1}}
+
+/* A-02 Research */
+.reports{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+.report{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:26px 28px 24px;display:flex;flex-direction:column}
+.report.lead{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:start}
+.report h3{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.2;margin:0 0 6px;color:var(--ink);letter-spacing:-.02em}
+.report .meta{font-family:var(--display);font-size:16px;color:var(--muted);margin:0 0 14px}
+.report p{margin:0 0 14px;max-width:60ch}
+.finding{border-left:3px solid var(--ink);padding:2px 0 2px 16px;font-weight:600;color:var(--ink);margin:4px 0 18px}
+.report .go{margin-top:auto;font-family:var(--display);font-weight:600;font-size:17px}
+.score{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:center;font-family:var(--display);font-size:16px}
+.score .bar{height:10px;background:var(--faint);position:relative}
+.score .bar i{position:absolute;inset:0 auto 0 0;background:#9A9A9A}
+.score .bar.red i{background:var(--ink)}
+.score-total{grid-column:1/-1;color:var(--ink);font-weight:800;font-size:56px;line-height:1;margin:0 0 8px}
+.score-total small{font-weight:500;font-size:18px;color:var(--muted);margin-left:8px}
+.contrib{margin-top:28px}
+.contrib h3{font-family:var(--display);font-weight:700;font-size:20px;margin:0 0 10px;color:var(--ink);letter-spacing:-.02em}
+.contrib ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--faint)}
+.contrib li{padding:12px 0;border-bottom:1px solid var(--faint);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px}
+.contrib li strong{font-family:var(--display);font-weight:700;color:var(--ink);font-size:17px;line-height:1.35}
+
+/* A-03 Technical */
+.project{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px;padding:28px 0;border-bottom:1px solid var(--faint)}
+.project:first-child{padding-top:0}
+.project h3{font-family:var(--display);font-weight:700;font-size:25px;line-height:1.15;margin:0 0 6px;color:var(--ink);letter-spacing:-.02em}
+.project .meta{font-family:var(--display);font-size:16px;color:var(--muted);margin:0 0 14px}
+.project p{margin:0 0 12px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;padding:0;list-style:none}
+.stack li{font-family:var(--display);font-size:15px;border:1px solid var(--muted);padding:2px 9px}
+.embed{border:1px solid var(--ink);background:var(--paper)}
+.embed iframe{display:block;width:100%;border:0}
+.embed-cap{font-family:var(--display);font-size:15px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--ink);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.figure{border:1px solid var(--ink);padding:22px;background:var(--paper)}
+.figure svg{display:block;width:100%;height:auto}
+.figure svg text{font-family:var(--display);font-size:13px;fill:var(--ink)}
+.toolkit{margin-top:28px;padding-top:24px;border-top:1px solid var(--ink);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.toolkit h4{font-family:var(--display);font-weight:700;font-size:17px;margin:0 0 6px;color:var(--ink);letter-spacing:-.02em}
+.toolkit p{margin:0;font-size:17px}
+
+
+.guided{margin-top:12px;padding-top:28px;border-top:1px solid var(--ink)}
+.guided-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-bottom:18px}
+.guided-head h3{font-weight:800;font-size:25px;letter-spacing:-.02em;color:var(--ink);margin:0}
+.guided-head p{margin:0;color:var(--muted);font-size:16px}
+.gp-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gp:first-child{grid-column:span 2}
+@media (max-width:900px){.gp-list{grid-template-columns:1fr}.gp:first-child{grid-column:auto}}
+.gp{border:1px solid var(--ink);background:var(--paper);padding:18px 18px 16px;display:flex;flex-direction:column}
+.gp h4{font-weight:700;font-size:18px;letter-spacing:-.015em;color:var(--ink);margin:0 0 2px}
+.gp .tools{font-size:14px;color:var(--muted);margin:0 0 10px}
+.gp p{font-size:15.5px;line-height:1.55;margin:0 0 10px}
+.gp a{margin-top:auto;font-weight:600;font-size:15px}
+
+
+/* Pop-up viewer for project write-ups and the live app */
+html.viewer-open{overflow:hidden}
+.viewer{padding:0;margin:0;border:none;background:transparent;width:100%;height:100%;max-width:none;max-height:none;overflow:hidden}
+.viewer[open]{display:flex;align-items:center;justify-content:center}
+.viewer::backdrop{background:rgba(28,20,15,.55)}
+.viewer-panel{
+  width:min(900px,calc(100% - 48px));height:min(92dvh,1100px);
+  background:var(--sheet);color:var(--ink);border:1px solid var(--frame);
+  display:flex;flex-direction:column;animation:viewerIn .35s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes viewerIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+.viewer-bar{display:flex;align-items:center;gap:14px;padding:12px 14px 12px 24px;border-bottom:1px solid var(--frame);flex:0 0 auto}
+.viewer-bar h2{font-size:20px;font-weight:800;letter-spacing:-.02em;margin:0;color:var(--ink)}
+.viewer-actions{margin-left:auto;display:flex;align-items:center;gap:14px}
+.viewer-link{font-size:15px;font-weight:600}
+.viewer-x{width:42px;height:42px;border:1px solid var(--frame);background:var(--sheet);color:var(--frame);font:inherit;font-size:26px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.viewer-x:hover{background:var(--frame);color:var(--sheet)}
+.viewer-body{flex:1 1 auto;overflow-y:auto;overscroll-behavior:contain;padding:28px 36px 56px;-webkit-overflow-scrolling:touch}
+.viewer-body.is-frame{padding:0;overflow:hidden}
+.viewer-body.is-frame iframe{display:block;width:100%;height:100%;border:0}
+.viewer-body h3{font-size:21px;font-weight:800;letter-spacing:-.02em;margin:30px 0 10px;color:var(--ink)}
+.viewer-body h3:first-child{margin-top:0}
+.viewer-body p,.viewer-body li{max-width:68ch}
+.viewer-body p{margin:0 0 14px}
+.viewer-body ul,.viewer-body ol{padding-left:22px;margin:0 0 16px}
+.viewer-body li{margin-bottom:4px}
+.viewer-body li p{margin:0}
+.viewer-body li h3{font-size:17px;margin:14px 0 4px}
+.viewer-body figure{margin:20px 0}
+.viewer-body img{display:block;max-width:100%;height:auto;border:1px solid var(--faint)}
+.viewer-body table{border-collapse:collapse;margin:0 0 16px;font-size:15px}
+.viewer-body td,.viewer-body th{border:1px solid var(--faint);padding:6px 10px}
+@media (max-width:560px){
+  .viewer-panel{width:calc(100% - 24px);height:94dvh}
+  .viewer-bar{padding:10px 10px 10px 16px}
+  .viewer-bar h2{font-size:17px}
+  .viewer-link{display:none}
+  .viewer-body{padding:20px 18px 48px}
+}
+@media (prefers-reduced-motion:reduce){.viewer-panel{animation:none}}
+
+/* A-04 Speaking */
+.talks{list-style:none;margin:0 0 36px;padding:0}
+.talk{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--faint);align-items:start}
+.talk .photo{aspect-ratio:16/10}
+.talk time{font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);display:block;margin-bottom:6px}
+.talk h3{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.22;margin:0 0 6px;color:var(--ink);letter-spacing:-.02em}
+.talk .where{font-family:var(--display);font-size:16px;color:var(--muted);margin:0 0 12px}
+.talk p{margin:0;font-size:17px}
+.podcast{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:32px;align-items:start}
+.podcast h3{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1;margin:0 0 14px;color:var(--ink);letter-spacing:-.02em}
+.podcast .count{font-family:var(--display);font-weight:800;font-size:72px;line-height:1;color:var(--ink);margin:18px 0 0}
+.podcast .count span{display:block;font-weight:500;font-size:17px;color:var(--muted)}
+.ratio{position:relative;padding-top:56.25%}
+.ratio iframe{position:absolute;inset:0;height:100%}
+
+/* A-05 About */
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px}
+.about p{margin:0 0 16px;max-width:62ch}
+.about .intro{font-size:20px;line-height:1.55;font-weight:500}
+.about .photo{aspect-ratio:4/5;margin-bottom:24px}
+.path{list-style:none;margin:0;padding:0;position:relative}
+.path::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:1px;background:var(--ink)}
+.path li{position:relative;padding:0 0 20px 32px}
+.path li::before{content:"";position:absolute;left:2px;top:9px;width:11px;height:11px;border:1.5px solid var(--ink);background:var(--sheet);transform:rotate(45deg)}
+.path li.now::before{background:var(--ink);border-color:var(--ink)}
+.path strong{display:block;font-family:var(--display);font-weight:700;font-size:18px;line-height:1.3;color:var(--ink);letter-spacing:-.02em}
+.path span{font-family:var(--display);font-size:16px;color:var(--muted)}
+.certs{margin-top:28px;padding-top:22px;border-top:1px solid var(--ink)}
+.certs h3{font-family:var(--display);font-weight:700;font-size:20px;margin:0 0 12px;color:var(--ink);letter-spacing:-.02em}
+.certs ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.certs li{border:1px solid var(--ink);padding:14px 16px;font-family:var(--display);font-size:17px;line-height:1.35}
+.certs li span{display:block;color:var(--muted);font-size:15px;margin-top:4px}
+
+/* A-06 Contact */
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
+.contact h3{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.4vw,56px);line-height:.98;margin:0 0 18px;letter-spacing:-.015em;color:var(--ink);letter-spacing:-.02em}
+.contact p{margin:0 0 20px;max-width:46ch}
+.links{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.links li{border-bottom:1px solid var(--ink)}
+.links a{display:flex;justify-content:space-between;gap:16px;padding:14px 4px;text-decoration:none;font-family:var(--display);font-size:19px}
+.links a span:last-child{color:var(--muted)}
+.links a:hover span:first-child{color:var(--ink)}
+
+@media (max-width:900px){
+  .hero,.report.lead,.project,.podcast,.about,.contact,.talk{grid-template-columns:1fr}
+  .hero{padding:28px 20px}
+  .reports{grid-template-columns:1fr}
+  .toolkit,.certs ul{grid-template-columns:1fr}
+  .titleblock{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .titleblock > :nth-child(2){border-right:none}
+  .titleblock > :nth-child(-n+2){border-bottom:1px solid var(--frame)}
+  .sheet-body{padding:24px 20px}
+  .sheet-head{padding:18px 20px 14px}
+  .sheet-head p{margin-left:0;flex-basis:100%}
+  .contrib li{grid-template-columns:1fr;gap:4px}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  .book{padding:18px 12px 36px}
+  .flaps{padding:0 8px}
+  .flap{padding:8px 13px 7px;font-size:15px}
+  .flap .lbl{display:none}
+  .flap[aria-current="page"] .lbl{display:inline}
+  .lede{font-size:18px}
+  .dims text{font-size:21px}
+  .dims text.note{font-size:19px}
+  .dims text.big{font-size:36px}
+}
+</style>
+</head>
+<body class="t-home">
+
+<div class="book">
+  <nav class="flaps" aria-label="Sheets">
+    <a class="flap t-home" href="#home" data-page="home"><b>A-01</b><span class="lbl">Home</span></a>
+    <a class="flap t-research" href="#research" data-page="research"><b>A-02</b><span class="lbl">Research</span></a>
+    <a class="flap t-technical" href="#technical" data-page="technical"><b>A-03</b><span class="lbl">Technical work</span></a>
+    <a class="flap t-speaking" href="#speaking" data-page="speaking"><b>A-04</b><span class="lbl">Speaking</span></a>
+    <a class="flap t-about" href="#about" data-page="about"><b>A-05</b><span class="lbl">About</span></a>
+    <a class="flap t-contact" href="#contact" data-page="contact"><b>A-06</b><span class="lbl">Contact</span></a>
+  </nav>
+
+  <main class="pages">
+
+    <!-- A-01 Home -->
+    <section class="page t-home is-active" id="home" data-index="0" aria-labelledby="home-h">
+      <div class="hero">
+        <div>
+          <h1 id="home-h" tabindex="-1"><span>Shalom</span><span>Karunwi</span></h1>
+          <p class="role">Strategy and energy analyst, Nigeria's power sector</p>
+          <p class="lede">Trained as an architect, I now read a different kind of structure: why Nigeria's electricity sector works the way it does, and what the numbers say about how it could work better.</p>
+          <div class="actions">
+            <a class="btn solid" href="#research">See the research</a>
+            <a class="btn" href="files/Shalom_Karunwi_CV.pdf" download>Download CV</a>
+          </div>
+        </div>
+
+        <figure class="portrait">
+          <div class="photo">
+            <img src="files/portrait.jpg" alt="Shalom Karunwi" width="1200" height="1400" onerror="this.parentNode.classList.add('missing')">
+            <span class="ph">Photo to add: files/portrait.jpg</span>
+          </div>
+          <svg class="dims draw" viewBox="0 0 560 600" aria-hidden="true">
+            <rect class="frame" x="40" y="40" width="360" height="450"/>
+            <!-- vertical dimension -->
+            <path class="dim" pathLength="1" d="M432 40 V490 M424 40 H440 M424 490 H440 M428 48 L432 40 L436 48 M428 482 L432 490 L436 482"/>
+            <text class="big" x="448" y="250">62.7</text>
+            <text x="448" y="274">N-PSMI baseline</text>
+            <text class="note" x="448" y="294">index I designed</text>
+            <!-- horizontal dimension -->
+            <path class="dim" pathLength="1" d="M40 522 H400 M40 512 V532 M400 512 V532 M48 518 L40 522 L48 526 M392 518 L400 522 L392 526"/>
+            <text class="big" x="40" y="566">24</text>
+            <text x="82" y="560">episodes produced</text>
+            <!-- leader -->
+            <path class="dim" pathLength="1" d="M400 110 L440 110 L456 140 H556"/>
+            <circle cx="400" cy="110" r="4" fill="var(--ink)"/>
+            <text x="456" y="132">NIEP-SIP</text>
+            <text class="note" x="456" y="160">two chapters</text>
+          </svg>
+        </figure>
+      </div>
+      <div class="titleblock">
+        <div><span>Project</span>Shalom Karunwi, portfolio</div>
+        <div><span>Based in</span>Abuja, Nigeria</div>
+        <div><span>Sheet</span>A-01 of A-06</div>
+        <a class="turn" href="#research"><span>Turn to</span>A-02 Research</a>
+      </div>
+    </section>
+
+    <!-- A-02 Research -->
+    <section class="page t-research" id="research" data-index="1" aria-labelledby="research-h">
+      <header class="sheet-head">
+        <span class="sheet-no">A-02</span>
+        <h2 id="research-h" tabindex="-1">Research</h2>
+        <p>Published analysis of Nigeria's electricity sector</p>
+      </header>
+      <div class="sheet-body">
+        <div class="reports">
+          <article class="report lead">
+            <div>
+              <h3>Nigeria Power Sector Intelligence Report, Q1 2026</h3>
+              <p class="meta">Nextier Power, October 2026. Sole author; designer of the index.</p>
+              <p>The first edition of the Nextier Nigeria Power Sector Market Index (N-PSMI), a weighted composite of generation, transmission, commercial and customer performance built entirely on public NERC data, with a fully published methodology.</p>
+              <p class="finding">Kaduna sharply accelerated meter deployment, yet its revenue recovery stayed at 37%. Metering is a precondition for commercial recovery, not a substitute for it.</p>
+              <!-- Swap this link for files/PSI_Q1_2026.pdf once Nextier approves hosting -->
+              <a class="go" href="https://thenextier.com/wp-content/uploads/2026/10/Nigeria-Power-Sector-Intelligence-Report_v2-1.pdf">Read the report</a>
+            </div>
+            <div class="score" aria-label="N-PSMI scorecard, Q1 2026">
+              <p class="score-total">62.7<small>of 100, Challenged band</small></p>
+              <span>Commercial viability</span><div class="bar"><i style="width:72.3%"></i></div>
+              <span>Grid and transmission</span><div class="bar"><i style="width:69.5%"></i></div>
+              <span>Customer service</span><div class="bar red"><i style="width:53.7%"></i></div>
+              <span>Generation</span><div class="bar red"><i style="width:51.4%"></i></div>
+            </div>
+          </article>
+          <article class="report">
+            <h3>Nigeria Power Sector Intelligence Report, H1 2025</h3>
+            <p class="meta">Nextier Power</p>
+            <p>Commercial and operational performance across all 11 distribution companies, built as a full Power BI suite.</p>
+            <p class="finding">Collection tracks metering (r = 0.73), and losses held at 19 to 20% every month: structural, not cyclical.</p>
+            <a class="go" href="https://thenextier.com/nigerian-power-sector-intelligence-report-h1-2025/">Find it at Nextier</a>
+          </article>
+          <article class="report">
+            <h3>Why Is Nigeria Operating Two Grids?</h3>
+            <p class="meta">The Daily Times</p>
+            <p>Nigeria runs a second, illegal grid of bypassed meters and unbilled connections. With losses near 40%, honest customers and DisCos pay for it.</p>
+            <a class="go" href="https://dailytimesng.com/why-is-nigeria-operating-two-grids/">Find it at The Daily Times</a>
+          </article>
+          <article class="report">
+            <h3>Unlocking the Power Sector Through the Decade of Gas</h3>
+            <p class="meta">Nextier Power</p>
+            <p>Nigeria has Africa's largest gas reserves but uses barely a quarter at home. Until the power sector pays its bills, gas will keep going abroad.</p>
+            <a class="go" href="https://thenextier.com/unlocking-nigerias-power-sector-through-the-decade-of-gas/">Find it at Nextier</a>
+          </article>
+          <article class="report">
+            <h3>Waste-to-Energy Models: The Nigerian Landscape</h3>
+            <p class="meta">Energy Insights newsletter</p>
+            <p>I also run quality assurance for every Energy Insights article before publication.</p>
+            <a class="go" href="https://www.linkedin.com/pulse/wte-models-nigerian-landscape-thenextier-iysie/?trackingId=Y4SW7Fz%2BEfBZ02qE4WziAQ%3D%3D">Find it at Nextier</a>
+          </article>
+        </div>
+        <div class="contrib">
+          <h3>Policy and advisory contributions</h3>
+          <ul>
+            <li><strong>National Integrated Electricity Policy Strategic Implementation Plan</strong><span>Authored the Energy Transition goal and the Governance and Communications chapter, turning Paris Agreement commitments and the Electricity Act 2023 into phased action plans, milestones and accountable institutional roles. Delivered to the Federal Ministry of Power.</span></li>
+            <li><strong>20-year review of Nigeria's electricity sector</strong><span>Co-developed for UKNIAF (FCDO), from EPSRA 2005 to the Electricity Act 2023, combining sector-wide data analysis with interviews of 12 senior stakeholders.</span></li>
+            <li><strong>From Policy to Practice: Nigeria's green industrialisation</strong><span>Coordinating a 12-month engagement with the Federal Ministry of Environment and the National Council on Climate Change, including a field assessment of the Lekki Low-Carbon Demonstration Zone.</span></li>
+            <li><strong>Power purchase agreement transparency</strong><span>Monitoring framework and baseline mapping across Abia and Enugu states for the Energy for Growth Hub.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="titleblock">
+        <div><span>Project</span>Shalom Karunwi, portfolio</div>
+        <div><span>Drawing</span>Research</div>
+        <div><span>Sheet</span>A-02 of A-06</div>
+        <a class="turn" href="#technical"><span>Turn to</span>A-03 Technical work</a>
+      </div>
+    </section>
+
+    <!-- A-03 Technical work -->
+    <section class="page t-technical" id="technical" data-index="2" aria-labelledby="technical-h">
+      <header class="sheet-head">
+        <span class="sheet-no">A-03</span>
+        <h2 id="technical-h" tabindex="-1">Technical work</h2>
+        <p>Things I built, mostly because I wanted to</p>
+      </header>
+      <div class="sheet-body">
+        <article class="project">
+          <div>
+            <h3>Marketing attribution for a professional services platform</h3>
+            <p class="meta">Hibarr, 2026</p>
+            <p>The client's data lived in six places, and anonymous website visits never connected to the customers they became. I built an identity bridge in PostgreSQL that resolved anonymous sessions to backend user records, then compared position-based and time-decay attribution models.</p>
+            <p>Delivered as a nine-page Power BI dashboard with a full data dictionary.</p>
+            <ul class="stack"><li>PostgreSQL</li><li>PostHog</li><li>Power BI</li><li>Attribution modelling</li></ul>
+          </div>
+          <div class="figure" aria-hidden="true">
+            <svg viewBox="0 0 420 220">
+              <g fill="none" stroke="var(--ink)" stroke-width="1.2">
+                <rect x="10" y="20" width="96" height="30"/><rect x="10" y="64" width="96" height="30"/><rect x="10" y="108" width="96" height="30"/>
+                <rect x="10" y="152" width="96" height="30"/><rect x="160" y="80" width="110" height="60"/><rect x="320" y="80" width="90" height="60"/>
+                <path d="M106 35 L160 100 M106 79 L160 105 M106 123 L160 115 M106 167 L160 120 M270 110 H320"/>
+              </g>
+              <path d="M106 35 L160 100" stroke="var(--ink)" stroke-width="1.6" fill="none"/>
+              <text x="20" y="40">Web sessions</text><text x="20" y="84">Sign-ups</text><text x="20" y="128">Bookings</text><text x="20" y="172">Campaigns</text>
+              <text x="172" y="106">Identity bridge</text><text x="172" y="124">(JSONB)</text>
+              <text x="330" y="106">Attribution</text><text x="330" y="124">models</text>
+            </svg>
+          </div>
+        </article>
+        <article class="project">
+          <div>
+            <h3>Gold in North America</h3>
+            <p class="meta">2026 World Cup prediction system, independent</p>
+            <p>A full pipeline from raw match data to live probabilities: a Poisson model blending historical form with squad quality, run through 10,000 Monte Carlo simulations of the tournament.</p>
+            <p>The app tracked its own accuracy after every matchday, scoring itself on Brier score and correct outcomes, and ran through to the final.</p>
+            <p><a href="https://gold-na.streamlit.app" data-modal-frame="https://gold-na.streamlit.app/?embed=true" data-title="Gold in North America">Open the app</a> or <a href="https://github.com/KarunwiShalom/gold-north-america">read the code</a>.</p>
+            <ul class="stack"><li>Python</li><li>dbt</li><li>BigQuery</li><li>Streamlit</li><li>Monte Carlo</li></ul>
+          </div>
+          <div class="embed">
+            <iframe data-src="https://gold-na.streamlit.app/?embed=true" title="Gold in North America, live app" height="560"></iframe>
+            <div class="embed-cap"><span>Live app, running in this page</span><a href="https://gold-na.streamlit.app" data-modal-frame="https://gold-na.streamlit.app/?embed=true" data-title="Gold in North America">Open larger</a></div>
+          </div>
+        </article>
+        <article class="project">
+          <div>
+            <h3>Instant payments survey dashboard</h3>
+            <p class="meta">AfricaNenda Foundation, with the World Bank and UNECA, 2026</p>
+            <p>A dashboard for 2,279 respondents across 18 African countries, letting analysts cut results by gender, age, income, economic role and country. Multi-select survey answers were unpivoted into more than 15 related tables. A second wave followed.</p>
+            <ul class="stack"><li>Excel Power Pivot</li><li>Power Query</li><li>Data modelling</li></ul>
+          </div>
+          <div class="figure" aria-hidden="true">
+            <svg viewBox="0 0 420 200">
+              <path d="M10 180 H410" stroke="var(--ink)" stroke-width="1.2"/>
+              <g fill="var(--ink)"><rect x="20" y="70" width="18" height="110"/><rect x="42" y="100" width="18" height="80"/><rect x="64" y="50" width="18" height="130"/><rect x="86" y="120" width="18" height="60"/><rect x="108" y="90" width="18" height="90"/><rect x="130" y="60" width="18" height="120"/><rect x="152" y="110" width="18" height="70"/><rect x="174" y="80" width="18" height="100"/><rect x="196" y="40" width="18" height="140"/></g>
+              <rect x="218" y="30" width="18" height="150" fill="var(--ink)"/>
+              <g fill="var(--muted)"><rect x="240" y="95" width="18" height="85"/><rect x="262" y="125" width="18" height="55"/><rect x="284" y="75" width="18" height="105"/><rect x="306" y="105" width="18" height="75"/><rect x="328" y="65" width="18" height="115"/><rect x="350" y="135" width="18" height="45"/><rect x="372" y="85" width="18" height="95"/></g>
+              <text x="20" y="22">18 countries, 2,279 respondents</text>
+            </svg>
+          </div>
+        </article>
+        <div class="guided">
+          <div class="guided-head">
+            <h3>Guided projects</h3>
+            <p>Where I learned the craft. All built by hand, before AI joined my workflow.</p>
+          </div>
+          <ul class="gp-list">
+            <li class="gp">
+              <h4>Gold in Qatar</h4>
+              <p class="tools">Python, BeautifulSoup, Poisson model, 2022</p>
+              <p>Scraped every World Cup match from 1930 to 2018 and simulated the 2022 tournament. The model picked Brazil, with France second and Argentina third. Argentina won it, which I was happy to be wrong about. Gold in North America is its grown-up successor.</p>
+              <a href="files/guided/gold-in-qatar.pdf" data-modal="wu-gold-in-qatar">Read the write-up</a>
+            </li>
+            <li class="gp">
+              <h4>Alfredo's Pizzeria</h4>
+              <p class="tools">PostgreSQL, Power BI</p>
+              <p>Normalised a delivery business's orders, inventory and staff data into a relational schema, then built dashboards for sales, stock and wages. Mozzarella made up almost a quarter of ingredient cost, and the most expensive pizza to make earned just $40 in the period.</p>
+              <a href="files/guided/alfredos-pizzeria.pdf" data-modal="wu-alfredos-pizzeria">Read the write-up</a>
+            </li>
+            <li class="gp">
+              <h4>AtliQ Technologies</h4>
+              <p class="tools">Excel, Power Query</p>
+              <p>An HR attendance dashboard that cleans and absorbs each new month automatically through a custom Power Query function. Tuesdays in June averaged 96% attendance, the best day for company-wide events.</p>
+              <a href="files/guided/atliq-attendance.pdf" data-modal="wu-atliq-attendance">Read the write-up</a>
+            </li>
+            <li class="gp">
+              <h4>Big Love Coffee</h4>
+              <p class="tools">Excel: XLOOKUP, INDEX MATCH, pivot tables</p>
+              <p>Four years of wholesale coffee sales across three countries in one interactive dashboard. The 2.5kg bag led sales, and four of the top five customers had no loyalty card.</p>
+              <a href="files/guided/big-love-coffee.pdf" data-modal="wu-big-love-coffee">Read the write-up</a>
+            </li>
+            <li class="gp">
+              <h4>Ivy Plant Inc.</h4>
+              <p class="tools">Power BI, DAX, Power Query</p>
+              <p>Year-to-date against prior-year sales for a global plant seller, built on a DAX date table, with a profitability matrix that sorts accounts by sales and gross margin.</p>
+              <a href="files/guided/ivy-plant-inc.pdf" data-modal="wu-ivy-plant-inc">Read the write-up</a>
+            </li>
+          </ul>
+        </div>
+        <div class="toolkit">
+          <div><h4>Analysis</h4><p>Power BI and DAX, Python, SQL, Excel with Power Pivot and Power Query, Tableau, SPSS, R.</p></div>
+          <div><h4>Data engineering</h4><p>dbt, BigQuery, PostgreSQL, Streamlit, and Python automation on the Microsoft Graph API.</p></div>
+          <div><h4>Methods</h4><p>Composite index design, Poisson and Monte Carlo models, attribution modelling, monitoring and evaluation frameworks.</p></div>
+        </div>
+      </div>
+      <div class="titleblock">
+        <div><span>Project</span>Shalom Karunwi, portfolio</div>
+        <div><span>Drawing</span>Technical work</div>
+        <div><span>Sheet</span>A-03 of A-06</div>
+        <a class="turn" href="#speaking"><span>Turn to</span>A-04 Speaking</a>
+      </div>
+    </section>
+
+    <!-- A-04 Speaking -->
+    <section class="page t-speaking" id="speaking" data-index="3" aria-labelledby="speaking-h">
+      <header class="sheet-head">
+        <span class="sheet-no">A-04</span>
+        <h2 id="speaking-h" tabindex="-1">Speaking and media</h2>
+        <p>Panels, workshops and the podcast I produce</p>
+      </header>
+      <div class="sheet-body">
+        <ol class="talks" reversed>
+          <li class="talk">
+            <figure class="photo">
+              <img src="files/events/power-dialogue.jpg" alt="Shalom speaking on the panel at the 121st Power Dialogue" loading="lazy" onerror="this.parentNode.classList.add('missing')">
+              <span class="ph">Photo to add: files/events/power-dialogue.jpg</span>
+            </figure>
+            <div>
+              <time datetime="2026-09-30">30 September 2026</time>
+              <h3>Powering the Next Generation: Youth, Innovation and Nigeria's Energy Transition</h3>
+              <p class="where">121st Power Dialogue, The Electricity Hub, Abuja</p>
+              <p>Panellist alongside speakers from UNDP Nigeria, Genesis Energy Group and Niveo Technology, on jobs, skills, financing and youth participation in the transition.</p>
+            </div>
+          </li>
+          <li class="talk">
+            <figure class="photo">
+              <img src="files/events/niep-sip-workshop.jpg" alt="Shalom presenting at the NIEP-SIP stakeholder workshop" loading="lazy" onerror="this.parentNode.classList.add('missing')">
+              <span class="ph">Photo to add: files/events/niep-sip-workshop.jpg</span>
+            </figure>
+            <div>
+              <time></time>
+              <h3>National Integrated Electricity Policy Strategic Implementation Plan</h3>
+              <p class="where">Stakeholder workshop, Federal Ministry of Power</p>
+              <p>Presented the energy transition and governance components of the plan to a workshop attended by the Minister of Power.</p>
+            </div>
+          </li>
+          <li class="talk">
+            <figure class="photo">
+              <img src="files/events/nrgi-workshop.jpg" alt="Shalom presenting at the NRGI validation workshop" loading="lazy" onerror="this.parentNode.classList.add('missing')">
+              <span class="ph">Photo to add: files/events/nrgi-workshop.jpg</span>
+            </figure>
+            <div>
+              <time>29th April 2026</time>
+              <h3>The Gas-to-Power Paradox</h3>
+              <p class="where">NRGI Validation Workshop, Abuja</p>
+              <p>Presented at the validation workshop for NRGI's work on gas-to-power in Nigeria.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="podcast">
+          <div>
+            <h3>Connecting the Dots</h3>
+            <p>A Nextier podcast hosted by Emeka Okpukpara that brings policymakers, investors and energy leaders into evidence-based conversation on Africa's energy future. As executive producer and editor, I run it end to end: guest research, concept and script, set, edit, motion graphics and distribution.</p>
+            <p class="count">24<span>full episodes produced, video and audio</span></p>
+          </div>
+          <div class="embed">
+            <div class="ratio"><iframe data-src="https://www.youtube.com/embed/videoseries?list=PLFCQamkOhyrzl2SuqasEjRlu0AMc88-zV" title="Connecting the Dots podcast playlist" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="embed-cap"><span>Full playlist, plays here</span><a href="https://www.youtube.com/playlist?list=PLFCQamkOhyrzl2SuqasEjRlu0AMc88-zV">Open on YouTube</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="titleblock">
+        <div><span>Project</span>Shalom Karunwi, portfolio</div>
+        <div><span>Drawing</span>Speaking and media</div>
+        <div><span>Sheet</span>A-04 of A-06</div>
+        <a class="turn" href="#about"><span>Turn to</span>A-05 About</a>
+      </div>
+    </section>
+
+    <!-- A-05 About -->
+    <section class="page t-about" id="about" data-index="4" aria-labelledby="about-h">
+      <header class="sheet-head">
+        <span class="sheet-no">A-05</span>
+        <h2 id="about-h" tabindex="-1">About</h2>
+        <p>From buildings to systems</p>
+      </header>
+      <div class="sheet-body">
+        <div class="about">
+          <div>
+            <p class="intro">Architecture taught me to read space, structure and constraint, and the relationship between a design and how people actually live inside it. I was always more interested in what drove the decisions than in the decisions themselves.</p>
+            <p>That curiosity took me to data, and data took me to energy. At Nextier Power I work across the electricity value chain, from generation and grid performance to distribution reform, tariff policy and transition planning, and I try to turn regulatory data into findings a decision-maker can act on.</p>
+            <p>Outside work, I build things for the pleasure of building them. Nigeria's infrastructure problems are ones I care about personally, not just professionally, and I think the country's energy transition is ultimately a story about people.</p>
+          </div>
+          <div>
+            <figure class="photo">
+              <img src="files/about.jpg" alt="Shalom Karunwi at work" loading="lazy" onerror="this.parentNode.classList.add('missing')">
+              <span class="ph">Photo to add: files/about.jpg</span>
+            </figure>
+            <ol class="path" aria-label="Career path">
+              <li><strong>Architecture</strong><span>Obafemi Awolowo University, 2018 to 2023</span></li>
+              <li><strong>Quality assurance</strong><span>Test IO, from 2023</span></li>
+              <li><strong>Junior data analyst</strong><span>NOIPolls, 2023 to 2024</span></li>
+              <li><strong>Data analyst</strong><span>Nextier Power, 2024 to 2025</span></li>
+              <li class="now"><strong>Energy research, policy and data analyst</strong><span>Nextier Power, 2026 to now. Promoted after 13 months.</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="certs">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Data Analytics Professional Certificate<span>Google, 2022</span></li>
+            <li>Data Analyst Nanodegree<span>Udacity, 2023</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="titleblock">
+        <div><span>Project</span>Shalom Karunwi, portfolio</div>
+        <div><span>Drawing</span>About</div>
+        <div><span>Sheet</span>A-05 of A-06</div>
+        <a class="turn" href="#contact"><span>Turn to</span>A-06 Contact</a>
+      </div>
+    </section>
+
+    <!-- A-06 Contact -->
+    <section class="page t-contact" id="contact" data-index="5" aria-labelledby="contact-h">
+      <header class="sheet-head">
+        <span class="sheet-no">A-06</span>
+        <h2 id="contact-h" tabindex="-1">Contact</h2>
+        <p>Research, roles and collaboration</p>
+      </header>
+      <div class="sheet-body">
+        <div class="contact">
+          <div>
+            <h3>Working on a problem in Nigeria's energy or infrastructure sector?</h3>
+            <p>I'm glad to talk about research, roles or collaboration. Email is the fastest way to reach me.</p>
+            <a class="btn solid" href="mailto:karunwishalom@gmail.com">Email me</a>
+          </div>
+          <ul class="links">
+            <li><a href="mailto:karunwishalom@gmail.com"><span>Email</span><span>karunwishalom@gmail.com</span></a></li>
+            <li><a href="https://linkedin.com/in/shalomkarunwi"><span>LinkedIn</span><span>in/shalomkarunwi</span></a></li>
+            <li><a href="https://github.com/KarunwiShalom"><span>GitHub</span><span>KarunwiShalom</span></a></li>
+            <li><a href="files/Shalom_Karunwi_CV.pdf" download><span>CV</span><span>PDF</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="titleblock">
+        <div><span>Project</span>Shalom Karunwi, portfolio</div>
+        <div><span>Drawing</span>Contact</div>
+        <div><span>Sheet</span>A-06 of A-06</div>
+        <a class="turn" href="#home"><span>Back to</span>A-01 Home</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+
+<dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+  <div class="viewer-panel">
+    <div class="viewer-bar">
+      <h2 id="viewer-title"></h2>
+      <div class="viewer-actions">
+        <a class="viewer-link" href="#"></a>
+        <button class="viewer-x" type="button" aria-label="Close">&times;</button>
+      </div>
+    </div>
+    <div class="viewer-body"></div>
+  </div>
+</dialog>
+
+<template id="wu-gold-in-qatar" data-title="Gold in Qatar" data-pdf="files/guided/gold-in-qatar.pdf">
+<h3>Overview</h3>
+<figure><img src="files/guided/gold-in-qatar/media/image16.jpg" alt="" loading="lazy"></figure>
+<p>Football is the world’s most popular sport, with 3.4 billion fans [Sport For Business, 2024]. Its quadrennial flagship event, the World Cup, is contested among national teams and is the pinnacle of international recognition for the sport.</p>
+<p>‘Messi’, ‘Ronaldo’. Even if you have never watched a football game, the chances that you know either one of those names is relatively high. Those two men have transcended the sport and sparked unending debates for over two decades. However, for all their incredible achievements, none has managed to hoist the World Cup atop his head.</p>
+<p>It has been clear for a long time that the debate will remain unending, but what is clear to everyone is that whoever secures the World Cup will edge the G.O.A.T (Greatest Of All Time) shouts.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image8.jpg" alt="" loading="lazy"></figure>
+<p>The 2022 World Cup, scheduled for November-December in Qatar, breaks from Tradition due to weather conditions. This unique timing, coupled with the fact that football legends Ronaldo and Messi are in their late thirties, adds a layer of significance to this event. It could be their last chance to claim the coveted World Cup title.</p>
+<p>Undertaking a seemingly daunting task, I set out to predict the 2022 World Cup winner. While sportsbooks do this routinely, I soon realised it was no easy feat. The complexity of the task became apparent as I delved into the data and the intricacies of the game.</p>
+<h3>DATA WRANGLING</h3>
+<h3>Identifying the Data</h3>
+<p>My data collection process was meticulous. I gathered the necessary data from FIFA's website, which holds a comprehensive record of previous editions. To ensure accuracy, I cross-referenced this with publicly available data on Wikipedia, a reliable source for historical sports data.</p>
+<p>Amazingly, every game played from the first edition in 1930 to the last in 2018 was publicly available. I checked the underlying HTML code for a couple of them, and they were identical - the data could be scraped! At this point, I could see that this project was coming together and wasn’t longer an idea.</p>
+<h3>Scraping the Data</h3>
+<p>My tool for extracting the data was the Jupyter Notebook, which runs on the Python programming language. I set it up on my local network and began writing the code.</p>
+<p>The first challenge was to gather the fixtures for the 2022 World Cup, which would form the basis of the prediction model. This involved scraping the data from reliable sources and ensuring its accuracy.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image24.png" alt="" loading="lazy"></figure>
+<p>The tournament begins with a group stage, where 32 teams are divided into 8 groups. Four teams per group play a match against each other, and the top two teams move on to the next round. I extracted one of the 8 group standings from the Wikipedia page. There were several tables on the website, so I used indexing to find the required table.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image27.png" alt="" loading="lazy"></figure>
+<p>I then wrote a for loop to extract all the groups and place them within a dictionary, removing the ‘Qualification’ column, which was surplus to requirements.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image26.png" alt="" loading="lazy"></figure>
+<p>I exported the dictionary after checking for errors.</p>
+<h3>Organising the Data</h3>
+<p>I created a data frame containing all the previous World Cup editions (after several hours of extraction, I discovered that the 1990 page HTML was different from the others and brought in incomplete data). I used the BeautifulSoup package to scrape the data, extracting every match played within a single edition of the World Cup.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image11.png" alt="" loading="lazy"></figure>
+<p>Next, I created empty lists to collect the extracted data based on the home team name, scoreline, and away team name. For each list, I created a for loop that iterated through all the games played in a single edition and appended the scraped data to its respective list. I saved the lists to a dictionary and then created a data frame from the dictionary.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image4.png" alt="" loading="lazy"></figure>
+<p>Simply put, I scraped all the games played at the 2018 World Cup (the latest edition), extracted the team names and score lines and saved them into a data frame.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image1.png" alt="" loading="lazy"></figure>
+<p>Seeing that the scraping was successful and error-free, I created a function that would iterate through every World Cup edition (2018, 2014, 2010, etc.), scrape the data, and save it into a data frame. Inside the function, I added a loop that would create a column and add the respective years to identify the games per year easily.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image22.png" alt="" loading="lazy"></figure>
+<p>While revising the extracted data, I noticed a problem with the 1990 World Cup data. Only the knockout stage matches conformed to the scraping code. I had thirty-six matches missing (the group stages).</p>
+<p>I had to think of the most efficient way to combine these thirty-six matches with the rest of the correctly extracted matches. After much googling and stack overflow, I manually entered the matches (not the most efficient way, but they seemed small enough to get done quickly).</p>
+<figure><img src="files/guided/gold-in-qatar/media/image21.png" alt="" loading="lazy"></figure>
+<p>I had all the data I needed within different data frames, and the next step was to combine everything into a single data frame, which would be fed into the model.</p>
+<p>I combined the missing 1990 data with the scraped knockout data.</p>
+<p>I combined all the matches played before and after 1990.</p>
+<p>I combined the matches played before 1990, the 1990 data, and those played after 1990 into a single data frame and saved it as a CSV.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image2.png" alt="" loading="lazy"></figure>
+<p>At this point, I had the tournament's group stage format and the data from all previous editions from which the model would learn, but something important was still missing: the fixtures. I needed to scrape the schedule for how all the matches would be played, from the group stages to the final.</p>
+<p>I used the BeautifulSoup package within a for loop to extract this and saved it into a CSV.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image17.png" alt="" loading="lazy"></figure>
+<h3>Cleaning the Data</h3>
+<p>I had the data I needed, but it still needed cleaning. I assigned the CSVs to new data frames and began cleaning (removing whitespaces, assigning appropriate names and datatypes, removing unnecessary information, etc.).</p>
+<figure><img src="files/guided/gold-in-qatar/media/image5.png" alt="" loading="lazy"></figure>
+<p>*I ran into an issue when trying to separate the score columns. For some reason, it refused to split appropriately. I imported the CSV into MS Excel, split it there and exported it back to the Jupyter Notebook*</p>
+<p>I did a final check for all the data extracted and then saved it to another CSV.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image3.png" alt="" loading="lazy"></figure>
+<h3>Building the Prediction Model</h3>
+<p>I had the group stage format, historical data and 2022 World Cup fixtures, and the next step was to feed in the data and build the prediction model.</p>
+<p>I created data frames for home and away teams based on goals scored and goals conceded for every match played from the first edition to the last. From the resulting data frame, I calculated the average goals scored per team. I did this to reward teams that have consistently scored more over the period while training the model.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image23.png" alt="" loading="lazy"></figure>
+<p>Next, I had to create the model.</p>
+<p>This part took a lot of tweaks, review, YouTube and googling, but I finally got it done! I used the Poisson distribution as the event assumptions were correlating;</p>
+<ul>
+<li><blockquote>
+<p>The events could be counted (matches to be played)</p>
+</blockquote></li>
+<li><blockquote>
+<p>The occurrence of events is independent (Scoring a goal doesn’t directly affect the other team’s ability to score as well)</p>
+</blockquote></li>
+<li><blockquote>
+<p>The rate at which events occur is constant (every match is 90 minutes)</p>
+</blockquote></li>
+<li><blockquote>
+<p>No two goals can be scored at the same time in a match</p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/gold-in-qatar/media/image7.png" alt="" loading="lazy"></figure>
+<p>The Poisson package did most of the heavy lifting. I multiplied the goals scored and conceded for each home and away team, set 10 as the maximum number of goals that could be scored, and then inserted the values for x, y, and lambda. All variables were to begin from initial states of zero.</p>
+<p>Lastly, the function would reward teams 3 points for a win and 1 point for a draw.</p>
+<p>I tested the function, and it was working as designed. The final step in building the model was to structure the tournament as it was scheduled to run. I split the fixtures based on the group stages and knockout rounds.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image20.png" alt="" loading="lazy"></figure>
+<h3>The Group Stage</h3>
+<p>Firstly, I extracted all team names and assigned them to a data frame, the first team being home and the second being away; I used the function to predict a game between such two teams, find the teams in the group stage format, assign points based on the result, and then reveal the points accumulated for each team. I wrapped this all up in a for loop so it iterates through every group and shows the final group standings.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image9.png" alt="" loading="lazy"></figure>
+<figure><img src="files/guided/gold-in-qatar/media/image12.png" alt="" loading="lazy"></figure>
+<h3>The Round of 16</h3>
+<p>According to tournament rules, the top two teams in each group progress into the Round of 16, while the bottom two teams are automatically eliminated.</p>
+<p>The fixtures were already predetermined; I just needed to teach the model which team was first and which was second and assign their respective ‘names’ (group winner &amp; runner-up).</p>
+<p>I built another function that would serve all the knockout rounds. The function would predict each game, find the winner and add the winning team’s name to a new column called ‘winner’.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image18.png" alt="" loading="lazy"></figure>
+<figure><img src="files/guided/gold-in-qatar/media/image15.png" alt="" loading="lazy"></figure>
+<h3>The Quarter-Finals</h3>
+<p>The next stages followed a repeated pattern, so I built a function that would serve all of them without writing extra lines of code.</p>
+<p>The function was designed to extract the winning teams, use the match numbers to place the teams in the next stage as home or away and add a “winner’s” column.</p>
+<p>I simply used the function I built earlier to simulate the matches and determine each winner.</p>
+<figure><img src="files/guided/gold-in-qatar/media/image13.png" alt="" loading="lazy"></figure>
+<figure><img src="files/guided/gold-in-qatar/media/image19.png" alt="" loading="lazy"></figure>
+<h3>The Final Four</h3>
+<p>After all of that, Messi (Argentina) and Ronaldo (Portugal) were still within sight of the prize. The next lines of code were the easiest of the entire project to write. It was pretty surreal at this point. Would it actually play out like this? Would there be a Messi vs. Ronaldo final?</p>
+<figure><img src="files/guided/gold-in-qatar/media/image10.png" alt="" loading="lazy"></figure>
+<figure><img src="files/guided/gold-in-qatar/media/image25.png" alt="" loading="lazy"></figure>
+<figure><img src="files/guided/gold-in-qatar/media/image6.png" alt="" loading="lazy"></figure>
+<p>No.</p>
+<p>Brazil Won.</p>
+<p>(Based on historical data).</p>
+<h3>TL;DR</h3>
+<p>Football is played on the pitch by humans, which means predictions can never be accurate. However, there are always favourites and underdogs, and this is based on Data.</p>
+<p>What I attempted to do here was use historical data to predict a future outcome based on a single question: “Who would win the highly coveted World Cup?”</p>
+<p>Brazil won.</p>
+<p>France was the runner-up.</p>
+<p>Argentina took bronze.</p>
+<p>Fortunately and unfortunately (however one wishes to look at it), football is played on the pitch, so we shall see if this prediction truly holds water.</p>
+<p>Regardless, one thing is certain…I definitely spent too much time on this. <em>Closes laptop and goes outside to touch grass</em></p>
+<figure><img src="files/guided/gold-in-qatar/media/image16.jpg" alt="" loading="lazy"></figure>
+
+</template>
+<template id="wu-alfredos-pizzeria" data-title="Alfredo's Pizzeria" data-pdf="files/guided/alfredos-pizzeria.pdf">
+<h3>Overview</h3>
+<p>I created this project to mimic the needs and challenges of a local food business that deals in take-outs and deliveries.</p>
+<p>"Alfredo's" is the fictional name I attributed to the business; I purchased the dataset as it was not readily available. It was created from an actual <strong>pizza delivery business</strong>, but the names and addresses were replaced and randomised to protect names and likenesses.</p>
+<p>The dataset consisted of three Excel files containing information about the orders delivered, stock and inventory, and staff information.</p>
+<h3>Research Questions</h3>
+<p>As there were three books containing different kinds of information, several questions could be asked. I went through each of the books and penned down the following as potential needs that such a business would require:</p>
+<ol type="1">
+<li><blockquote>
+<h3>Orders Activity</h3>
+</blockquote></li>
+</ol>
+<ul>
+<li><blockquote>
+<p>Revenue by pizza type</p>
+</blockquote></li>
+<li><blockquote>
+<p>Orders/sales by hour</p>
+</blockquote></li>
+<li><blockquote>
+<p>Orders by location</p>
+</blockquote></li>
+<li><blockquote>
+<p>Total orders and sales</p>
+</blockquote></li>
+<li><blockquote>
+<p>Quantity of items sold</p>
+</blockquote></li>
+</ul>
+<ol start="2" type="1">
+<li><blockquote>
+<h3>Stock control/ Inventory management</h3>
+</blockquote></li>
+</ol>
+<ul>
+<li><blockquote>
+<p>When to order new stock?</p>
+</blockquote></li>
+<li><blockquote>
+<p>What ingredients go into making each menu item?</p>
+</blockquote></li>
+<li><blockquote>
+<p>How much does it cost to make each menu item?</p>
+</blockquote></li>
+<li><blockquote>
+<p>Existing stock level?</p>
+</blockquote></li>
+</ul>
+<ol start="3" type="1">
+<li><blockquote>
+<h3>Staff Management</h3>
+</blockquote></li>
+</ol>
+<ul>
+<li><blockquote>
+<p>Work times for each staff</p>
+</blockquote></li>
+<li><blockquote>
+<p>Pay-per-hour</p>
+</blockquote></li>
+<li><blockquote>
+<p>Total amount of wages being paid</p>
+</blockquote></li>
+<li><blockquote>
+<p>The total amount of working hours</p>
+</blockquote></li>
+</ul>
+<h3>Data Wrangling</h3>
+<p>I began by normalising the data. I broke down each of the three main tables (Orders, Stock and Staff) into smaller tables, with their appropriate data grouped.</p>
+<p>Given I was going to query the data via SQL, I had to visualise the schema and assign appropriate primary and foreign keys. Below is the schema I used while normalising the data.</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image13.jpg" alt="" loading="lazy"></figure>
+<h3>Data Querying</h3>
+<p>Given that I was working locally, I had to manually create each table in the Postgresql database and then import the data within the table from the CSV files, which I had converted from Excel format.</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image8.png" alt="" loading="lazy"></figure>
+<p>Next, I began writing the queries to extract the needed information based on my business questions.</p>
+<p>The first query was to connect the orders, items and address table. The resulting table provided data from which I could easily extract the significant metrics that would form the dashboard for Order activity.</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image5.png" alt="" loading="lazy"></figure>
+<p>Satisfied with the results, I began querying for the inventory management dashboard. Looking through the schema, I knew I had to use a subquery(s) to get what I wanted.</p>
+<p>I wrote my first query for the number of orders per available item on the menu. I did this by connecting the orders table to the items table.</p>
+<p>Next, I broke down each item ordered by the ingredients that went into preparing it. Three tables were connected to this query: Items, Recipes, and Ingredients.</p>
+<p>The primary metrics were set in the resulting table; however, I needed to add calculated columns based on the business questions. With the table mentioned above as a subquery, I added calculated columns describing the ordered weight of each item, the unit cost of each ingredient, and the total ingredient cost. The resulting table solved most of the business questions about stock control.</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image7.png" alt="" loading="lazy"></figure>
+<p>I still needed data for the remaining stock amount based on the total weight ordered and prior inventory amount. I saved the earlier table as a view and queried off of it.</p>
+<p>I queried for the ordered weight and used this as a subquery to join with the Inventory table. From the resulting table, I queried for the total inventory weight before sales began and the weight left after sales were made in the period.</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image1.png" alt="" loading="lazy"></figure>
+<p>The data in the resulting table was sufficient to answer the remaining questions about Inventory management.</p>
+<p>The last table required was to answer the questions relating to staff management.</p>
+<p>It was straightforward as I needed to write a query to connect the three tables with staff information: Staff, Rotations and Shifts. Within the query, I added two calculated columns for hours worked (hours_in_shift) and wage bill for each staff based on hours worked (staff_cost).</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image2.png" alt="" loading="lazy"></figure>
+<h3>Data Visualization &amp; Insights</h3>
+<p>The queries were done, and I had the tables I needed to create a dashboard for business stakeholders. I connected PostgreSQL to Power BI to develop the needed dashboards.</p>
+<p>I extracted the four tables I needed to complete the dashboard: Orders activity, Stock 1&amp;2, and Staff cost. I made a few rectifications to clean up each table, such as changing the column names, ensuring each column had the correct data type, splitting columns to normalise the data, etc.</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image4.png" alt="" loading="lazy"></figure>
+<p>Most of the heavy lifting had been done in PostgreSQL, and the dashboards didn't take too long to set up. I created four measures to help with the aggregation: Average order value, Total sales, Total hours worked, and Total staff cost.</p>
+<h3>Dashboard 1 - Orders Activity</h3>
+<p>The first visuals were cards conveying total aggregations within the period. Number of customers serviced, Revenue generated, items sold and Average value per order.</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image11.png" alt="" loading="lazy"></figure>
+<p>Next, I created a pie chart to show the sales by category (pie chart because it's a pizzeria, and I was highlighting pizza sales). The doughnut chart was used for the percentage per order type (doughnut chart to reduce the data-ink ratio), and finally, a bar chart to show the sales made per pizza item on the menu. I made the following inferences:</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image3.png" alt="" loading="lazy"></figure>
+<ul>
+<li><blockquote>
+<p>Unsurprisingly, Pizza's were bringing in over 60% of the revenue</p>
+</blockquote></li>
+<li><blockquote>
+<p>Customers ordered more desserts than sides</p>
+</blockquote></li>
+<li><blockquote>
+<p>The Pizza Quattro Formaggi Large was the top-selling pizza with over $200 worth of sales over the second favourite - Pizza Diavola (hot) Large.</p>
+</blockquote></li>
+</ul>
+<p>The fifth visual was a line graph to display the number of orders against the number of sales made for every working hour within the period. The last visual was a map showing the location of each order that was made. I was able to infer the following:</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image12.png" alt="" loading="lazy"></figure>
+<ul>
+<li><blockquote>
+<p>The working hours were between 12:00 to 23:00</p>
+</blockquote></li>
+<li><blockquote>
+<p>Peak working hours were 13:00, 19:00, and 22:00</p>
+</blockquote></li>
+<li><blockquote>
+<p>All orders came from the Manchester area in Connecticut, United States</p>
+</blockquote></li>
+<li><blockquote>
+<p>Most of the bulk orders came outside the Manchester centre</p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/alfredos-pizzeria/media/image10.png" alt="" loading="lazy"></figure>
+<h3>Dashboard 2 - Inventory Management</h3>
+<p>The first visual was a card which displayed the total amount it cost to make all orders within the period regarding ingredients.</p>
+<p>The second visual was a table displaying each ingredient by name, the quantity used to prepare orders, the total cost of each ingredient used, and the percentage left in stock. I used a colour code to quickly identify the ingredients that needed replacement - red (&lt;30% left in stock), pink (&lt;50% left in stock, and no colour (&gt;50% left in stock).</p>
+<p>The third visual was a multi-row card with every item on the menu and the amount it costs to prepare. Clicking on each item modified the ingredient table to show only the ingredients required to make the highlighted item. I inferred the following:</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image9.png" alt="" loading="lazy"></figure>
+<ul>
+<li><blockquote>
+<p>Anchovies and the Pizza dough ball (8 pack) needed immediate restocking.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The Pizza Seafood Large was the most expensive item to make on the menu.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Although the Pizza dough ball was used the most, the mozzarella cheese took the most chunk out of the business pockets; it accounted for almost 25% of the total ingredients cost.</p>
+</blockquote></li>
+</ul>
+<h3>Dashboard 3 - Staff Management</h3>
+<p>The first visual was two cards that displayed the aggregation for the total wage bill for the period and the total hours worked for the field staff.</p>
+<p>The second visual was a multi-card row showing the working hours of each staff for the period.</p>
+<p>The third visual was two doughnut charts that showed the wage bill per field staff member and the total number of hours worked.</p>
+<figure><img src="files/guided/alfredos-pizzeria/media/image6.png" alt="" loading="lazy"></figure>
+<h3>Conclusions</h3>
+<p>I was able to draw the following conclusions based on the initial business questions:</p>
+<ol type="1">
+<li><blockquote>
+<p>The Pizza Seafood Large is the most expensive to make and only brought in $40 from 2 customers within the period, second only to the Pizza Hawaiian Regular, the least-selling pizza item.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Most orders were recorded at 19:00, which is generally dinner time at the average home, 22:00, which could mean it was the last resort if people could not decide what to have for dinner, and 13:00, usually lunch break at most organisations.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Generally, small orders were recorded close to the city centre, and the more significant number of orders were recorded by individuals staying farther from the city centre.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The Pizza dough ball (8-pack) and Anchovies were being run through a lot quicker than any other ingredient and needed to be ordered in large quantities compared to other ingredients.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Most of the ingredients were still way above 50% in stock.</p>
+</blockquote></li>
+<li><blockquote>
+<p>All the field staff were working two shifts and working the same hours. However, Luqman Cantu's pay rate was significantly higher than the rest of the staff members.</p>
+</blockquote></li>
+</ol>
+
+</template>
+<template id="wu-atliq-attendance" data-title="AtliQ Technologies" data-pdf="files/guided/atliq-attendance.pdf">
+<h3>Overview</h3>
+<p>AtliQ Technologies is a software company in Vadorada, India. It provides consultation services to help technological businesses upscale.</p>
+<p>The human resources manager reached out with a dataset containing attendance information for each staff member within the company. The dataset was an Excel file and had four tables:</p>
+<ul>
+<li><blockquote>
+<p>Three tables containing daily attendance within 3 months</p>
+</blockquote></li>
+<li><blockquote>
+<p>One table which had the attendance key for the three other tables</p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/atliq-attendance/media/image14.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.1. Dataset preview in MS Excel</em></p>
+<p>The dataset had <strong>86 rows</strong> and <strong>45 columns</strong> spanning <strong>April - June 2022</strong>.</p>
+<h3>Research Questions</h3>
+<p>The final deliverable needed was an automated dashboard that combined the three months and could update accordingly with newly added data. The following questions were to be answered via the dashboard:</p>
+<ol type="1">
+<li><blockquote>
+<p><strong>Working Preferences</strong>: <em>if people prefer to work from home or work on-site</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Attendance Information</strong>: <em>which day is a majority of the staff present in the organization</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Sick Leave Percentage</strong>: <em>how many people are taking sick leaves, and how often do they take it</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Leaves Percentage</strong>: <em>how often are people going on leave, and how many of them are unforced</em></p>
+</blockquote></li>
+</ol>
+<h3>Data Cleaning</h3>
+<p>I previewed the dataset on MS Excel; the first thing that really stood out was the structure. It was in a wide format with 45 rows. This would be a problem as it was human-readable but would be a tall order for the computer to read.</p>
+<p>Each column had the attendance per day and then the totals for each attendance type. I also saw that the data had several missing values after June 19th and could potentially throw errors if included.</p>
+<p>I loaded the dataset into power query and began the cleaning.</p>
+<p>Given that the dashboard should update automatically for future data, the cleaning had to be automated, and this was a headache because each of the 46 columns had different header names across the three sheets.</p>
+<p>After some googling, I combined the sheets into one (the fourth sheet was the attendance key and neededn't be combined, so I filtered it out).</p>
+<figure><img src="files/guided/atliq-attendance/media/image1.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.2. The single table containing all the sheets</em></p>
+<p>I created a copy of the combined table and removed all other tables and columns besides the April column containing the attendance data. This was to serve as a template, where I cleaned up the table and stored the steps taken as a function that I would use to automate the same procedures on the other tables.</p>
+<figure><img src="files/guided/atliq-attendance/media/image12.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.3. April table before cleaning</em></p>
+<ul>
+<li><blockquote>
+<p>I removed the second row with irrelevant data and set the column headers appropriately.</p>
+</blockquote></li>
+<li><blockquote>
+<p>I unpivoted the columns with daily attendance information and corrected the data type.</p>
+</blockquote></li>
+<li><blockquote>
+<p>I renamed the column headers appropriately.</p>
+</blockquote></li>
+<li><blockquote>
+<p>I corrected the errors that were thrown up due to the total columns (they were inconsequential).</p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/atliq-attendance/media/image9.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.4. April table after cleaning</em></p>
+<p>Once the cleaning was done, I created a <strong>parameter</strong> based on all the steps taken. I inserted the parameter into the <strong>Applied Steps</strong> section of the <strong>template table</strong> by filtering the rows with it to serve as a test to see if it worked as expected.</p>
+<p>As mentioned earlier, I then created a function from the <em>template</em> table with the parameter set to filter its rows.</p>
+<p>I reverted to the main table, which contained all the attendance information, and created a <strong>new column</strong> by <strong>invoking a custom function</strong> (which was the function I had made).</p>
+<figure><img src="files/guided/atliq-attendance/media/image7.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.5. A new column (Cleaned) based on a custom function</em></p>
+<p>I previewed all the newly created tables to check for errors and corrected a couple that resulted from the custom function.</p>
+<p>I expanded the newly created column, formatted column names appropriately, removed unnecessary columns, and had a final combined table with unpivoted columns ready for analysis. I loaded it into Power B.I.</p>
+<figure><img src="files/guided/atliq-attendance/media/image3.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.6. The final table for analysis</em></p>
+<h3>The Analysis</h3>
+<p>The attendance Key was integral to the analysis; the meaning of each key was defined as:</p>
+<p><strong>PL (Paid Leave)</strong>, <strong>SL (Sick Leave)</strong>, <strong>HPL (Half-day Paid Leave)</strong>, <strong>HSL (Half-day Sick Leave)</strong>, <strong>WFH (Work From Home)</strong>, FFL (Floating Festival Leave), HFFL (Half-day Floating Festival Leave), BL (Birthday Leave), LWP (Leave Without Pay), HLWP (Half-day Leave Without Pay), BRL (Bereavement Leave), HBRL (Half Bereavement Leave), <strong>HWFH (Half Work From Home)</strong>, <strong>WO (Weekly Off)</strong>, <strong>HO (Holiday Off)</strong>, ML (Menstrual Leave), HML (Half day Menstrual Leave).</p>
+<p>I had to create measures to aggregate the data to answer the prevailing business questions. I created five (5) base measures:</p>
+<ul>
+<li><blockquote>
+<p><em>Total Working Days</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Total Present Days</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Total Remote Work Days</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Total Days on Leave</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Total Days on Sick Leave</em></p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/atliq-attendance/media/image5.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.7. The table containing all created measures</em></p>
+<p>I also created measures that calculated percentages based on the base measures. I created five (5) of them:</p>
+<ul>
+<li><blockquote>
+<p><em>Percentage of Persons Present on a given day</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Percentage of Persons Working Remotely</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Percentage of Persons on Leave</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Percentage of Persons on Sick Leave</em></p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Percentage of Sick Persons on Leave</em></p>
+</blockquote></li>
+</ul>
+<p>During the process of creating these measures, I also created calculated columns within the main table of data:</p>
+<ul>
+<li><blockquote>
+<p><em>Work From Home Count</em>: based on the data, some people worked remotely for half a day, and this needed to be considered when calculating the number of persons present on a given day</p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Sick Leave Count</em>: accommodating those who took a half-day sick leave</p>
+</blockquote></li>
+<li><blockquote>
+<p><em>On Leave</em>: aggregating everyone who took a type of leave on a given day</p>
+</blockquote></li>
+<li><blockquote>
+<p><em>Day of Week</em>: based on the date column, the name of each working day</p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/atliq-attendance/media/image13.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.8. Calculated columns created to aggregate data</em></p>
+<h3>Visualizations</h3>
+<p><strong>The first visual(s)</strong> I created were four (4) dynamic cards that displayed the percentages of those who were present, Worked Remotely, Were on Leave, or Were on Sick leave.</p>
+<figure><img src="files/guided/atliq-attendance/media/image2.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.9. Dynamic cards</em></p>
+<p>The cards, by default, showed the percentages for the three months. I then created a slicer to filter for each month.</p>
+<p><strong>The second visual</strong> was a table that displayed each member of staff's presence, percentage of time spent working remotely, and percentage of time spent on sick leave. This table was created to provide further information about each individual staff member's working preferences.</p>
+<figure><img src="files/guided/atliq-attendance/media/image4.png" alt="" loading="lazy"></figure>
+<p><em>Fig 2.1. A table containing presence insights for each member of staff</em></p>
+<p><strong>The third visual</strong> was a treemap containing information about the number of people on leave per month per type of leave taken. This visual was created to answer the <em>Sick Leave Percentage</em> business question: to view the number of people who took leave, the kind of leave they took, and whether it was sick leave.</p>
+<figure><img src="files/guided/atliq-attendance/media/image8.png" alt="" loading="lazy"></figure>
+<p><em>Fig 2.2. Treemap showing the number of people on leave per month per type of leave</em></p>
+<p><strong>The fourth visual(s)</strong> were three (3) stacked area charts showing the monthly trends for Attendance Information concerning staff presence, remote work, and sick leave. This visual provided information on how attendance changed, how much remote work had grown or fallen, and how often people took sick leave.</p>
+<figure><img src="files/guided/atliq-attendance/media/image11.png" alt="" loading="lazy"></figure>
+<p><em>Fig 2.3. Stacked bar chart showing the staff presence trend over three months</em></p>
+<p><strong>The final visuals</strong> for the dashboard were three treemaps accompanied by the stacked area charts. These visuals showed the daily percentages of staff presence, remote work, and sick leave. They addressed the business question of Attendance Information by showing the days when people showed up the most.</p>
+<figure><img src="files/guided/atliq-attendance/media/image10.png" alt="" loading="lazy"></figure>
+<p><em>Fig 2.4. Treemap showing the daily percentages of people working remotely</em></p>
+<h3>Insights and Conclusions</h3>
+<figure><img src="files/guided/atliq-attendance/media/image6.png" alt="" loading="lazy"></figure>
+<p><em>Fig 2.5. Final Dashboard</em></p>
+<ol type="1">
+<li><blockquote>
+<p><strong>People are showing up regularly, and no drastic decisions regarding staff presence on regular working days are needed.</strong></p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Compared to the other two months, many people took leave in May, most of which were paid and unforced. It would be interesting to dig a little deeper into the external/internal events/circumstances during May that contributed to these decisions.</strong></p>
+</blockquote></li>
+<li><blockquote>
+<h3>Sick leave percentages were low and did not indicate anything to worry about.</h3>
+</blockquote></li>
+<li><blockquote>
+<h3>People preferred to work remotely on Thursdays and Fridays (no surprises there).</h3>
+</blockquote></li>
+<li><blockquote>
+<p><strong>On-site work was preferred over remotely, and people showed up the most on Mondays.</strong></p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Tuesdays in June had an average of 96% staff presence and should be the primary target day for any team-building activities or company-wide memos.</strong></p>
+</blockquote></li>
+</ol>
+
+</template>
+<template id="wu-big-love-coffee" data-title="Big Love Coffee" data-pdf="files/guided/big-love-coffee.pdf">
+<h3>Overview</h3>
+<p>“Big Love” is a fictional company name I assigned to the dataset. A wholesale company that sells coffee beans in kilogram packages to individuals. It comprised coffee bean sales made to customers across three countries over four years. It was, however, a real-life dataset with altered names and addresses to protect client information.</p>
+<p>Downloaded from a Github repository, I opened it up on MS Excel, and it had three tables:</p>
+<ol type="1">
+<li><blockquote>
+<p>Orders contained information about each coffee bean order made within the period. It had <strong>five</strong> (<strong>5) columns and one thousand (1000) rows</strong>. It had <strong>two unique identifiers (Customer ID and Product ID)</strong> that could connect to the other tables.</p>
+</blockquote></li>
+</ol>
+<figure><img src="files/guided/big-love-coffee/media/image6.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.1. Pre-cleaning Orders table showing first ten rows</em></p>
+<ol start="2" type="1">
+<li><blockquote>
+<p>Customers: this contained information about each customer who made a coffee bean purchase within the period. It had <strong>nine (9) columns and one thousand (1000) rows</strong>.</p>
+</blockquote></li>
+</ol>
+<figure><img src="files/guided/big-love-coffee/media/image10.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.2. Pre-cleaning Customers table showing first ten rows</em></p>
+<ol start="3" type="1">
+<li><blockquote>
+<p>Products: It contained information about each coffee bean available during the period. It had <strong>seven (7) columns and forty-nine (49) rows</strong>.</p>
+</blockquote></li>
+</ol>
+<figure><img src="files/guided/big-love-coffee/media/image2.png" alt="" loading="lazy"></figure>
+<p><em>Fig 1.3. Pre-cleaning Products table showing first ten rows</em></p>
+<h3>Business Questions</h3>
+<p>In working on this dataset, I aimed to replicate a real-life scenario where a small-medium scale business could view its year-on-year data and identify key insights for growth and strategy.</p>
+<p>After previewing the dataset, I knew I needed to merge the information in the three tables into one, which would be the basis for the dashboard.</p>
+<p>I identified the following as key insights that would be valuable to stakeholders within the business:</p>
+<ol type="1">
+<li><blockquote>
+<p><strong>Total Sales by Country</strong>: The dataset covered three countries, so I could identify the countries generating the most revenue and the gap between them.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Sales over Time</strong>: crucial for every business, I wanted to analyse the sales numbers over the three years of sales to view how profitable the company has been</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Customer Insights</strong>: I wanted to view the top purchasing customers and the volume with which they order coffee beans.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Loyalty</strong>: since there was a column showing if each customer had a loyalty card, I decided to check if returning customers had the card and were purchasing in high volumes and if those who did not have the card were one-off customers.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Product Insights</strong>: I wanted to view the product generating the most revenue regarding roast type and bag size.</p>
+</blockquote></li>
+</ol>
+<h3>Data Cleaning</h3>
+<p>First, I needed to grab all the data from the three tables into one. I started by identifying the data I needed based on the business questions. I created seven (7) columns on the orders table: <em>Customer Name, Country, Loyalty Card, Coffee Type, Roast Type, Size, and Unit Price</em>. Each of the columns was from the other two tables.</p>
+<figure><img src="files/guided/big-love-coffee/media/image11.png" alt="" loading="lazy"></figure>
+<p><em>Fig 2.1. Orders table with additional column headers</em></p>
+<p>The first three columns were from the <strong>Customer table</strong>. I used the XLookup function to bring in the data, with the <strong>Customer ID column</strong> as the unique identifier.</p>
+<p>I repeated the function for the Loyalty Card and Country columns as well. I brought in <strong>three (3) columns</strong> from the Customer table: <em>Customer Name, Country, and Loyalty Card</em>.</p>
+<p>The next columns were from the <strong>Products table</strong>. Instead of using the XLookup function for each column individually, I used the <strong>Index and Match function</strong>. Thereby capturing all the columns in one go. I arranged the columns identically to the arrangement in the Products table, so the formula worked effectively. I used the <strong>Product ID column</strong> as the unique identifier. I brought in four (4) columns from the Products table: <em>Coffee Type, Roast Type, Size, and Unit Price</em>.</p>
+<p>I had the data I needed from the tables together on one table. However, I realised I needed extra columns for the analysis. I created three manual columns:</p>
+<ul>
+<li><blockquote>
+<p>Sales: I multiplied the Quantity column by the Unit Price column to aggregate the total sale made to each customer</p>
+</blockquote></li>
+<li><blockquote>
+<p>Coffee Type Full Name: I used the <strong>IF function</strong> to provide the full names of each abbreviated coffee type (I did a Google search to familiarise myself with the coffee types).</p>
+</blockquote></li>
+<li><blockquote>
+<p>Roast Type Full Name: I used the <strong>IF function</strong> to provide the full names of each of the abbreviated coffee types</p>
+</blockquote></li>
+</ul>
+<p>Finally,</p>
+<ul>
+<li><blockquote>
+<p>I formatted the Unit Price and Sales columns to reflect the transaction currency.</p>
+</blockquote></li>
+<li><blockquote>
+<p>I added the unit (kg) to the Unit Price column</p>
+</blockquote></li>
+<li><blockquote>
+<p>I set the Order Date column to DD-MMM-YYYY.</p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/big-love-coffee/media/image7.png" alt="" loading="lazy"></figure>
+<p><em>Fig 2.2. Orders table after cleaning</em></p>
+<h3>Analysis &amp; Visualizations</h3>
+<p>To analyse the cleaned table effectively, I had to create pivot tables.</p>
+<p>Firstly, I converted the table to an actual table with columns and rows recognised by MS Excel, as evidenced by the Table Design ribbon, which showed up.</p>
+<p>I converted the table to a pivot table and started to create pivot tables for analysis, and they include:</p>
+<ol type="1">
+<li><blockquote>
+<p><strong>Sales over time</strong>: The first pivot table comprised the sum of sales based on each coffee type. This table shows the sales per coffee type for each month of each year within the period. Accompanying the table was a line graph showing the sales trend over the years within the period.<img src="files/guided/big-love-coffee/media/image3.png" alt="" loading="lazy"></p>
+</blockquote></li>
+</ol>
+<p><em>Fig 3.1. Pivot table showing the sum of sales per coffee type</em></p>
+<figure><img src="files/guided/big-love-coffee/media/image9.png" alt="" loading="lazy"></figure>
+<p><em>Fig 3.2. Line graph showing coffee type vs. sum of sales over time</em></p>
+<ol start="2" type="1">
+<li><blockquote>
+<p><strong>Sales By Country</strong>: The second pivot table comprised the sales per country within the period. Accompanying the table was a bar chart that displayed the country on the y-axis versus the sum of sales on the x-axis.</p>
+</blockquote></li>
+</ol>
+<figure><img src="files/guided/big-love-coffee/media/image13.png" alt="" loading="lazy"></figure>
+<p><em>Fig 3.3. Pivot table showing the sum of sales per country</em></p>
+<figure><img src="files/guided/big-love-coffee/media/image4.png" alt="" loading="lazy"></figure>
+<p><em>Fig 3.4. Bar chart showing the sum of sales per country in descending order</em></p>
+<ol start="3" type="1">
+<li><blockquote>
+<p><strong>Sales By Customer</strong>: The third pivot table was created based on the sum of sales per customer. Accompanying the table was a bar chart which showed the top five (5) purchasing customers in descending order. Shout-out to Allis!</p>
+</blockquote></li>
+</ol>
+<figure><img src="files/guided/big-love-coffee/media/image5.png" alt="" loading="lazy"></figure>
+<p><em>Fig 3.5. Pivot chart showing the sum of sales per customer</em></p>
+<figure><img src="files/guided/big-love-coffee/media/image1.png" alt="" loading="lazy"></figure>
+<p><em>Fig 3.6. Bar chart showing the sum of sales per customer in descending order</em></p>
+<ol start="4" type="1">
+<li><blockquote>
+<p><strong>Timeline and Filters</strong>: I created the dashboard to be dynamic and give the end-user options to filter for desired data; this meant adding filters and a timeline to drill down for specific information and select specific periods, respectively. I created three (3) filters: <strong>Roast Type, Size, and Loyalty Card</strong>. I made the <strong>timeline to cover the period of the data</strong>.</p>
+</blockquote></li>
+</ol>
+<figure><img src="files/guided/big-love-coffee/media/image8.png" alt="" loading="lazy"></figure>
+<p><em>Fig 3.7. Sales timeline showing Dec 2021 to Dec 2022</em></p>
+<figure><img src="files/guided/big-love-coffee/media/image14.png" alt="" loading="lazy"></figure>
+<p><em>Fig 3.8. Three filter cards for roast type, size, and loyalty card</em></p>
+<h3>Insights &amp; Conclusions</h3>
+<figure><img src="files/guided/big-love-coffee/media/image12.png" alt="" loading="lazy"></figure>
+<p><em>Fig 4.1. Final dashboard containing all visualisations</em></p>
+<ol type="1">
+<li><blockquote>
+<p>By a considerable degree, the <strong>United States racked up the most sales</strong>, and it was obvious that “Big Love Coffee” was located in the United States of America.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>2019</strong> had sales fluctuate between the $100 - $400 mark, with <strong>June being the most profitable, hitting $681</strong>.</p>
+</blockquote></li>
+</ol>
+<blockquote>
+<p><strong>2020</strong> started strong in Q1, with February recording the highest sales at <strong>$745</strong>. This, however, fluctuated throughout the year, with August &amp; September having a major decline before recovering in October.</p>
+<p><strong>2021</strong> saw sales gradually increase throughout the year. Q4 was the most successful, with sales between $150 and $600; <strong>September recorded the highest sale of $841</strong>.</p>
+<p><strong>2022</strong> had consistent numbers between the 200 - 400 mark. However, the data cut off in August. There was a sharp decline in February, recording the lowest sale of the year at $91, just after <strong>January recorded a year-high $844</strong>.</p>
+</blockquote>
+<ol start="3" type="1">
+<li><blockquote>
+<p><strong>Allis Wilmore</strong> was the top purchasing customer, with $317 spent over the four years. Interestingly, <strong>they only made purchases three times within this period</strong>, each with a high volume. The rest of the top five racked up numbers within touching distance of each other. The difference between the first and fifth was $39.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Four of the customers within the top 5 purchasing customers did not have a loyalty card</strong>; only Ben Dundregde had one and, unsurprisingly, had made a purchase the most times as well.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The <strong>2.5kg bag was the top-selling bag</strong>. It had twice the amount sold in the United States than the second sold bag, the 1.0kg bag.</p>
+</blockquote></li>
+</ol>
+<blockquote>
+<p>The Roast Type sales were similar. <strong>The Light roast type accumulated the most sales</strong>, followed by the Medium kind and then the Dark.</p>
+</blockquote>
+
+</template>
+<template id="wu-ivy-plant-inc" data-title="Ivy Plant Inc." data-pdf="files/guided/ivy-plant-inc.pdf">
+<h3>Overview</h3>
+<p><em>“Ivy Plant Inc.”</em> is a fictional name I created to associate with the dataset. A large-scale company that sells three different groups of plants (indoor, outdoor, and landscape) to individuals and businesses worldwide.</p>
+<p>The dataset mimics the operations of a real-life plant company with similar operations. I downloaded it from a GitHub repository.</p>
+<p>The dataset is an Excel file containing three tables split up into three tabs:</p>
+<ol type="1">
+<li><blockquote>
+<p><strong>Plant_FACT:</strong> This table contained sales invoices for the plants. It had a product I.D. and account I.D. column that could be connected with the other tables.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Accounts:</strong> Containing all the information about each specific account included in the sale of the plants. An Account ID column was the unique identifier for the table.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Plant hierarchy</strong>: This section had information about the products(plants). The products were assigned based on family, group, name, size, and type.</p>
+</blockquote></li>
+</ol>
+<p>It contained <strong>2000+ rows</strong> of data spanning <strong>three years (Jan. 2022 - Apr. 2024)</strong>.</p>
+<h3>Research Questions</h3>
+<p>At first glance, the dataset was relatively clean and needed a few tweaks for analysis. I was able to identify the following as key insights that could be useful in a real-world scenario:</p>
+<ul>
+<li><blockquote>
+<p><strong>Total Sales</strong>: how much revenue was generated?</p>
+</blockquote></li>
+</ul>
+<ul>
+<li><blockquote>
+<p><strong>Total Quantity of Goods Sold</strong>: how much is being sold?</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Gross Profit</strong>: There was a column with the cost of goods sold. This could be useful in determining how sustainable the current prices of goods are.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Year-To-Date &amp; Prior-Year-To-Date</strong>: Apart from the total sales, it would be interesting to find out how well sales numbers compare with previous years within the same period. The data cuts off in the first quarter of 2024, so this insight could be useful to prepare and re-strategize if needed for the rest of the year.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Regional Performances:</strong> Each of the accounts and their locations was listed so I could view numbers from these regions to see how well each area was doing.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Account Profitability</strong>: Besides the regional performances, I could also view the accounts performing well in gross profit and those needing intervention.</p>
+</blockquote></li>
+<li><blockquote>
+<p><strong>Sales based on product type;</strong> what type of plants do customers buy more regularly?</p>
+</blockquote></li>
+</ul>
+<h3>Data Cleaning</h3>
+<p>As earlier mentioned, the dataset was relatively clean and only needed minor adjustments. To aid reproducibility, I performed these cleaning operations using Power Query.</p>
+<p>I loaded the dataset into Power Query and performed the following operations:</p>
+<ul>
+<li><blockquote>
+<p>Modified the Column names; a few were misspelled and inconsistent</p>
+</blockquote></li>
+<li><blockquote>
+<p>Renamed the tables to reflect their contents appropriately</p>
+</blockquote></li>
+<li><blockquote>
+<p>The Sales table was to be my Fact Table. Therefore, I identified the column on the other tables to be joined with the Fact Table and removed all duplicates.</p>
+</blockquote></li>
+<li><blockquote>
+<p>I noticed null values on the Accounts ID column within the Accounts table and removed them as they were inconsequential and likely to throw errors.</p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/ivy-plant-inc/media/image8.png" alt="" loading="lazy"></figure>
+<p><em>Fig. 1.1 Final table after data cleaning</em></p>
+<p>Satisfied with the final look, I loaded the three tables into Power BI.</p>
+<h3>The Analysis</h3>
+<ol type="1">
+<li><blockquote>
+<p><u>Date Table</u></p>
+</blockquote></li>
+</ol>
+<p>I created a <strong>DAX Date Table</strong> covering the dataset period (2022 - 2024). This was necessary for the Prior-Year-To-Date (P.Y.T.D) values.</p>
+<figure><img src="files/guided/ivy-plant-inc/media/image1.png" alt="" loading="lazy"></figure>
+<p><em>Fig. 2.1. Date Table</em></p>
+<p>P.s. I made significant progress in creating the visuals when I noticed inconsistencies and traced them back to the Date table. I had to create a calculated column, “<strong>InPast</strong>,” which cross-referenced the dates within the date table with the dates on the Fact Table and returned a ‘True’ or ‘False’ statement for each.</p>
+<ol start="2" type="1">
+<li><blockquote>
+<p><u>Base Measures</u></p>
+</blockquote></li>
+</ol>
+<p>Then, I created the <strong>base measures</strong> that would run the dashboard. I created five of them, namely:</p>
+<ul>
+<li><blockquote>
+<p>Cost of Goods</p>
+</blockquote></li>
+<li><blockquote>
+<p>Gross Profit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Gross Profit Percentage</p>
+</blockquote></li>
+<li><blockquote>
+<p>Total Quantity</p>
+</blockquote></li>
+<li><blockquote>
+<p>Total Sales</p>
+</blockquote></li>
+</ul>
+<ol start="3" type="1">
+<li><blockquote>
+<p><u>P.Y.T.D &amp; Y.T.D Values</u></p>
+</blockquote></li>
+</ol>
+<p>Next were the measures for the Year-To-Date(P.Y.T.D) and Prior-Year-To-Date(P.Y.T.D) values. I identified the major metrics the dashboard was going to cycle between as:</p>
+<ul>
+<li><blockquote>
+<p>Gross Profit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Sales</p>
+</blockquote></li>
+<li><blockquote>
+<p>Quantity</p>
+</blockquote></li>
+</ul>
+<p>Therefore, the P.Y.T.D and Y.T.D measures were created for each metric.</p>
+<p>The dashboard was beginning to come together at this point, and I knew the visuals I wanted. I wanted to show each visual based on the three major metrics and all three on a single dashboard; I needed to create a slicer and switch between them:</p>
+<ul>
+<li><blockquote>
+<p>Firstly, I created a table and inputted the three metrics (Gross Profit, Sales, Quantity) as a column called Values</p>
+</blockquote></li>
+<li><blockquote>
+<p>I created the slicer based on the Values from the table</p>
+</blockquote></li>
+<li><blockquote>
+<p>Then, I created the switch measures based on the slicer values</p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/ivy-plant-inc/media/image5.png" alt="" loading="lazy"></figure>
+<p><em>Fig. 2.2. DAX calculation for the PYTD switch measure</em></p>
+<p>I created three switch measures;</p>
+<ul>
+<li><blockquote>
+<p>Y.T.D (year-to-date values)</p>
+</blockquote></li>
+<li><blockquote>
+<p>P.Y.T.D (Prior year-to-date values)</p>
+</blockquote></li>
+<li><blockquote>
+<p>Y.T.D_v_P.Y.T.D (Y.T.D - P.Y.T.D)</p>
+</blockquote></li>
+</ul>
+<h3>Visualizations</h3>
+<p>I created each visual to buttress each of the initial research questions posed.</p>
+<p>The first visual was a set of dynamic cards to show:</p>
+<ul>
+<li><blockquote>
+<p>The total Y.T.D value served as the revenue generated for the fiscal year</p>
+</blockquote></li>
+<li><blockquote>
+<p>P.Y.T.D: the revenue generated for the previous fiscal year within the same period</p>
+</blockquote></li>
+<li><blockquote>
+<p>Y.T.D_v_P.Y.T.D; the difference in sales between the current fiscal year and the previous one</p>
+</blockquote></li>
+<li><blockquote>
+<p>Gross Profit values for the given fiscal year in percentages</p>
+</blockquote></li>
+</ul>
+<p>Each card showed the information based on the metric selected in the previously created slicer.</p>
+<figure><img src="files/guided/ivy-plant-inc/media/image7.png" alt="" loading="lazy"></figure>
+<p><em>Fig. 2.3. Dynamic cards representing the base measures used in developing the dashboard</em></p>
+<p>I created the second visual to view the <strong>Regional Performances</strong> at a glance.</p>
+<p>I decided to use a clustered bar chart to view the underperforming regions. For each of the three major metrics, the visual showed the bottom 10 countries for the fiscal year in view.</p>
+<figure><img src="files/guided/ivy-plant-inc/media/image9.png" alt="" loading="lazy"></figure>
+<p><em>Fig. 2.4. Chart showing the bottom 10 countries based on their Y.T.D sales against their P.Y.T.D sales</em></p>
+<p>I created the third visual to address the <strong>difference in sales numbers between the current fiscal year and the previous one</strong>.</p>
+<p>I went with a waterfall chart displaying the numbers per month and added drill-down options for Country and product type. At a glance, it was clear to see the difference in sales for each month compared to the previous year. Drilling down showed the countries responsible for the numbers and the products’ performances.</p>
+<figure><img src="files/guided/ivy-plant-inc/media/image3.png" alt="" loading="lazy"></figure>
+<p><em>Fig. 2.5. Chart showing Y.T.D sales against P.Y.T.D sales per month for 2024</em></p>
+<p>The fourth visual addressed the business question: <strong>what type of plants do customers buy more regularly?</strong></p>
+<p>I used a line and stacked column chart to examine the Y.T.D. and P.Y.T.D. values per quarter based on product types for the fiscal year. The columns represented the numbers for each plant type and the total aggregate for the period. The line represented the total P.Y.T.D. value aggregate for the same period. I included a drill-down option for individual months.<img src="files/guided/ivy-plant-inc/media/image6.png" alt="" loading="lazy"></p>
+<p><em>Fig. 2.6. Chart showing Y.T.D &amp; P.Y.T.D sales based on months and product type for 2024</em></p>
+<p>The final visual addressed <strong>Account Profitability.</strong></p>
+<p>I created a scatterplot that split the accounts into four quadrants based on their Y.T.D value and Gross Profit Percentage.</p>
+<ul>
+<li><blockquote>
+<p>The top-left quadrant showed accounts with relatively high gross profit percentages but low numbers (sales and quantity)</p>
+</blockquote></li>
+<li><blockquote>
+<p>The bottom left quadrant showed accounts with relatively low gross profit percentages and low numbers (sales and quantity)</p>
+</blockquote></li>
+<li><blockquote>
+<p>The bottom right quadrant showed accounts with relatively high numbers but low gross profit percentages.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The top right quadrant showed accounts with relatively high numbers and high gross profit percentages.</p>
+</blockquote></li>
+</ul>
+<figure><img src="files/guided/ivy-plant-inc/media/image4.png" alt="" loading="lazy"></figure>
+<p><em>Fig. 2.7. Graph showing account profitability segmentation based on gross profit percentages and sales</em></p>
+<h3>Insights and Conclusions</h3>
+<figure><img src="files/guided/ivy-plant-inc/media/image2.png" alt="" loading="lazy"></figure>
+<p><em>Fig. 3.1. Final Dashboard showing insights for Sales in 2023</em></p>
+<ol type="1">
+<li></li>
+</ol>
+
+</template>
+<script>
+(function(){
+  var pages=[].slice.call(document.querySelectorAll(".page"));
+  var flaps=[].slice.call(document.querySelectorAll(".flap"));
+  var book=document.querySelector(".book");
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var current=document.getElementById("home");
+  var busy=false;
+
+  function byId(id){return pages.find(function(p){return p.id===id})||null}
+  function loadEmbeds(page){
+    page.querySelectorAll("iframe[data-src]").forEach(function(f){f.src=f.getAttribute("data-src");f.removeAttribute("data-src")});
+  }
+  function markFlap(id){
+    flaps.forEach(function(f){
+      if(f.getAttribute("data-page")===id) f.setAttribute("aria-current","page"); else f.removeAttribute("aria-current");
+    });
+    var active=flaps.find(function(f){return f.getAttribute("data-page")===id});
+    var bar=document.querySelector(".flaps");if(active&&bar){var l=active.offsetLeft,r=l+active.offsetWidth;if(l<bar.scrollLeft)bar.scrollLeft=l-8;else if(r>bar.scrollLeft+bar.clientWidth)bar.scrollLeft=r-bar.clientWidth+8}
+  }
+  function focusHeading(page){
+    var h=page.querySelector("h1[tabindex],h2[tabindex]");
+    if(h) h.focus({preventScroll:true});
+  }
+  function bringBookIntoView(){
+    var top=book.getBoundingClientRect().top+window.scrollY;
+    if(window.scrollY>top) window.scrollTo(0,top);
+  }
+
+  function show(id,instant){
+    var next=byId(id)||byId("home");
+    if(next===current||busy){markFlap(current.id);return}
+    var forward=Number(next.dataset.index)>Number(current.dataset.index);
+    var prev=current;
+    markFlap(next.id);
+    loadEmbeds(next);
+    document.body.className="t-"+next.id;
+    document.title=(next.id==="home"?"":next.querySelector("h2").textContent+": ")+"Shalom Karunwi";
+
+    if(instant||reduce){
+      prev.classList.remove("is-active");
+      next.classList.add("is-active");
+      current=next; bringBookIntoView(); if(!instant) focusHeading(next);
+      return;
+    }
+    busy=true;
+    bringBookIntoView();
+    if(forward){
+      // The current page turns away to the left, revealing the next page beneath it.
+      next.classList.add("is-active");
+      prev.classList.remove("is-active");
+      prev.classList.add("turn-out");
+      prev.addEventListener("animationend",function done(e){
+        if(e.target!==prev) return;
+        prev.removeEventListener("animationend",done);
+        prev.classList.remove("turn-out");
+        finish(next);
+      });
+    }else{
+      // An earlier page turns back over the current one.
+      next.classList.add("turn-in");
+      next.addEventListener("animationend",function done(e){
+        if(e.target!==next) return;
+        next.removeEventListener("animationend",done);
+        next.classList.remove("turn-in");
+        prev.classList.remove("is-active");
+        next.classList.add("is-active");
+        finish(next);
+      });
+    }
+  }
+  function finish(next){current=next;busy=false;focusHeading(next);var want=(location.hash||"#home").slice(1);if(byId(want)&&want!==current.id) route(false)}
+
+  function route(instant){
+    var id=(location.hash||"#home").slice(1);
+    show(byId(id)?id:"home",instant);
+  }
+  window.addEventListener("hashchange",function(){route(false)});
+
+  // Start on whichever sheet the link points to, without animating.
+  var startId=(location.hash||"#home").slice(1);
+  if(byId(startId)&&startId!=="home"){current.classList.remove("is-active");current=byId(startId);current.classList.add("is-active");loadEmbeds(current)}
+  document.body.className="t-"+current.id;
+  markFlap(current.id);
+  if("scrollRestoration" in history) history.scrollRestoration="manual";
+  window.addEventListener("load",function(){window.scrollTo(0,0)});
+  window.scrollTo(0,0);
+})();
+
+(function(){
+  var dlg=document.getElementById("viewer");
+  if(!dlg||typeof dlg.showModal!=="function") return; // older browsers keep the normal links
+  var title=dlg.querySelector("#viewer-title"),body=dlg.querySelector(".viewer-body"),link=dlg.querySelector(".viewer-link"),x=dlg.querySelector(".viewer-x");
+  var lastFocus=null;
+
+  function open(){
+    lastFocus=document.activeElement;
+    document.documentElement.classList.add("viewer-open");
+    dlg.showModal();
+    body.scrollTop=0;
+    x.focus();
+  }
+  function openWriteup(id){
+    var t=document.getElementById(id); if(!t) return false;
+    title.textContent=t.getAttribute("data-title");
+    body.className="viewer-body"; body.innerHTML=""; body.appendChild(t.content.cloneNode(true));
+    link.textContent="Download PDF"; link.href=t.getAttribute("data-pdf"); link.setAttribute("download",""); link.removeAttribute("target");
+    open(); return true;
+  }
+  function openFrame(src,name,page){
+    title.textContent=name;
+    body.className="viewer-body is-frame"; body.innerHTML="";
+    var f=document.createElement("iframe"); f.src=src; f.title=name; body.appendChild(f);
+    link.textContent="Open in new tab"; link.href=page; link.removeAttribute("download"); link.target="_blank"; link.rel="noopener";
+    open(); return true;
+  }
+
+  document.addEventListener("click",function(e){
+    var a=e.target.closest("[data-modal],[data-modal-frame]");
+    if(!a||e.metaKey||e.ctrlKey||e.shiftKey) return;
+    var ok=a.hasAttribute("data-modal")?openWriteup(a.getAttribute("data-modal")):openFrame(a.getAttribute("data-modal-frame"),a.getAttribute("data-title")||"",a.href);
+    if(ok) e.preventDefault();
+  });
+  x.addEventListener("click",function(){dlg.close()});
+  // Tapping the dimmed area at the sides closes the pop-up.
+  dlg.addEventListener("click",function(e){if(e.target===dlg) dlg.close()});
+  dlg.addEventListener("close",function(){
+    document.documentElement.classList.remove("viewer-open");
+    body.innerHTML="";
+    if(lastFocus&&lastFocus.focus) lastFocus.focus({preventScroll:true});
+  });
+})();
+</script>
+</body>
+</html>
