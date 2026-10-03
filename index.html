@@ -238,6 +238,12 @@ html.viewer-open{overflow:hidden}
 }
 @media (prefers-reduced-motion:reduce){.viewer-panel{animation:none}}
 
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);opacity:0;pointer-events:none;
+  background:#1B1B1B;color:#fff;font-size:15px;font-weight:500;padding:12px 18px;border-radius:4px;z-index:50;transition:opacity .25s ease,transform .25s ease;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-color-scheme:dark){.toast{background:#F0F0F0;color:#161616}}
+
 /* A-04 Speaking */
 .talks{list-style:none;margin:0 0 36px;padding:0}
 .talk{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--faint);align-items:start}
@@ -577,7 +583,7 @@ html.viewer-open{overflow:hidden}
               <span class="ph">Photo to add: files/events/niep-sip-workshop.jpg</span>
             </figure>
             <div>
-              <time>Date to add</time>
+              <time datetime="2026-04-29">29 April 2026</time>
               <h3>National Integrated Electricity Policy Strategic Implementation Plan</h3>
               <p class="where">Stakeholder workshop, Federal Ministry of Power</p>
               <p>Presented the energy transition and governance components of the plan to a workshop attended by the Minister of Power.</p>
@@ -589,7 +595,7 @@ html.viewer-open{overflow:hidden}
               <span class="ph">Photo to add: files/events/nrgi-workshop.jpg</span>
             </figure>
             <div>
-              <time>Date to add</time>
+              <time datetime="2026-04-29">29 April 2026</time>
               <h3>The Gas-to-Power Paradox</h3>
               <p class="where">NRGI Validation Workshop, Abuja</p>
               <p>Presented at the validation workshop for NRGI's work on gas-to-power in Nigeria.</p>
@@ -677,7 +683,7 @@ html.viewer-open{overflow:hidden}
           </div>
           <ul class="links">
             <li><a href="mailto:karunwishalom@gmail.com"><span>Email</span><span>karunwishalom@gmail.com</span></a></li>
-            <li><a href="https://linkedin.com/in/shalomkarunwi" target="_blank" rel="noopener"><span>LinkedIn</span><span>in/shalomkarunwi</span></a></li>
+            <li><a href="https://www.linkedin.com/in/shalom-karunwi/" target="_blank" rel="noopener"><span>LinkedIn</span><span>in/shalom-karunwi</span></a></li>
             <li><a href="https://github.com/KarunwiShalom" target="_blank" rel="noopener"><span>GitHub</span><span>KarunwiShalom</span></a></li>
             <li><a href="files/Shalom_Karunwi_CV.pdf" download><span>CV</span><span>PDF</span></a></li>
           </ul>
@@ -693,6 +699,8 @@ html.viewer-open{overflow:hidden}
   </main>
 </div>
 
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
   <div class="viewer-panel">
@@ -1632,6 +1640,26 @@ html.viewer-open{overflow:hidden}
     document.documentElement.classList.remove("viewer-open");
     body.innerHTML="";
     if(lastFocus&&lastFocus.focus) lastFocus.focus({preventScroll:true});
+  });
+})();
+
+(function(){
+  // Many visitors have no mail app set up, so a mailto link can appear to do nothing.
+  // Copy the address as well, and say so.
+  var toast=document.getElementById("toast"),timer;
+  function say(msg){toast.textContent=msg;toast.classList.add("show");clearTimeout(timer);timer=setTimeout(function(){toast.classList.remove("show")},3200)}
+  function copy(text){
+    if(navigator.clipboard&&window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(res,rej){
+      var t=document.createElement("textarea");t.value=text;t.setAttribute("readonly","");t.style.position="fixed";t.style.opacity="0";
+      document.body.appendChild(t);t.select();
+      try{document.execCommand("copy")?res():rej()}catch(e){rej(e)}finally{document.body.removeChild(t)}
+    });
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest('a[href^="mailto:"]'); if(!a) return;
+    var addr=a.getAttribute("href").slice(7).split("?")[0];
+    copy(addr).then(function(){say("Email address copied: "+addr)},function(){say("Email: "+addr)});
   });
 })();
 </script>
