@@ -25,6 +25,7 @@
 .t-home{--tone:#F6D2AE;--frame:#8A3A0E}
 .t-research{--tone:#F0D98A;--frame:#6A4C00}
 .t-technical{--tone:#F3BDAA;--frame:#93301E}
+.t-slides{--tone:#EBAE88;--frame:#7E2E12}
 .t-speaking{--tone:#EEBFCB;--frame:#7F2346}
 .t-about{--tone:#E3CDAA;--frame:#5E4226}
 .t-contact{--tone:#F7C67E;--frame:#7C4300}
@@ -33,6 +34,7 @@
   .t-home{--tone:#4A2A18;--frame:#F7C39A}
   .t-research{--tone:#3F3312;--frame:#EBCB6A}
   .t-technical{--tone:#4A251C;--frame:#F4A893}
+  .t-slides{--tone:#4B2716;--frame:#F0A982}
   .t-speaking{--tone:#44222E;--frame:#EFA5BC}
   .t-about{--tone:#3A2D20;--frame:#E2C49C}
   .t-contact{--tone:#47300F;--frame:#F5BE6E}
@@ -244,6 +246,30 @@ html.viewer-open{overflow:hidden}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media (prefers-color-scheme:dark){.toast{background:#F0F0F0;color:#161616}}
 
+
+/* A-04 Presentations */
+.slides-intro{max-width:64ch;margin:0 0 30px}
+.redact-note{display:flex;gap:10px;align-items:center;font-size:15px;color:var(--muted);margin:-14px 0 30px}
+.redact-note i{display:inline-block;width:38px;height:12px;border-radius:4px;background:#3A3A3A}
+.deck{padding:0 0 30px;margin:0 0 30px;border-bottom:1px solid var(--faint)}
+.deck:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.deck h3{font-weight:800;font-size:22px;letter-spacing:-.02em;margin:0 0 4px;color:var(--ink)}
+.deck .meta{font-size:15px;color:var(--muted);margin:0 0 6px}
+.deck p.what{margin:0 0 14px;max-width:70ch}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.slide-thumb{display:block;width:100%;padding:0;border:1px solid var(--faint);background:var(--paper);cursor:zoom-in;aspect-ratio:16/9;overflow:hidden;transition:border-color .2s ease,transform .2s ease}
+.slide-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.slide-thumb:hover{border-color:var(--ink);transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.slide-thumb{transition:none}.slide-thumb:hover{transform:none}}
+.viewer-body.is-image{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:18px 18px 22px;background:var(--paper)}
+.viewer-body.is-image img{max-width:100%;max-height:calc(100% - 56px);height:auto;border:1px solid var(--faint);background:#fff}
+.viewer-body.is-image .cap{font-size:15px;color:var(--muted);text-align:center}
+.viewer-nav{display:flex;gap:8px}
+.viewer-nav button{font:inherit;font-size:15px;font-weight:600;border:1px solid var(--frame);background:var(--sheet);color:var(--frame);padding:6px 14px;cursor:pointer}
+.viewer-nav button:hover{background:var(--frame);color:var(--sheet)}
+.viewer-nav button:disabled{opacity:.35;cursor:default;background:var(--sheet);color:var(--frame)}
+@media (max-width:560px){.thumbs{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
+
 /* A-04 Speaking */
 .talks{list-style:none;margin:0 0 36px;padding:0}
 .talk{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--faint);align-items:start}
@@ -321,9 +347,10 @@ html.viewer-open{overflow:hidden}
     <a class="flap t-home" href="#home" data-page="home"><b>A-01</b><span class="lbl">Home</span></a>
     <a class="flap t-research" href="#research" data-page="research"><b>A-02</b><span class="lbl">Research</span></a>
     <a class="flap t-technical" href="#technical" data-page="technical"><b>A-03</b><span class="lbl">Technical work</span></a>
-    <a class="flap t-speaking" href="#speaking" data-page="speaking"><b>A-04</b><span class="lbl">Speaking</span></a>
-    <a class="flap t-about" href="#about" data-page="about"><b>A-05</b><span class="lbl">About</span></a>
-    <a class="flap t-contact" href="#contact" data-page="contact"><b>A-06</b><span class="lbl">Contact</span></a>
+    <a class="flap t-slides" href="#slides" data-page="slides"><b>A-04</b><span class="lbl">Presentations</span></a>
+    <a class="flap t-speaking" href="#speaking" data-page="speaking"><b>A-05</b><span class="lbl">Speaking</span></a>
+    <a class="flap t-about" href="#about" data-page="about"><b>A-06</b><span class="lbl">About</span></a>
+    <a class="flap t-contact" href="#contact" data-page="contact"><b>A-07</b><span class="lbl">Contact</span></a>
   </nav>
 
   <main class="pages">
@@ -368,7 +395,7 @@ html.viewer-open{overflow:hidden}
       <div class="titleblock">
         <div><span>Project</span>Shalom Karunwi, portfolio</div>
         <div><span>Based in</span>Abuja, Nigeria</div>
-        <div><span>Sheet</span>A-01 of A-06</div>
+        <div><span>Sheet</span>A-01 of A-07</div>
         <a class="turn" href="#research"><span>Turn to</span>A-02 Research</a>
       </div>
     </section>
@@ -438,7 +465,7 @@ html.viewer-open{overflow:hidden}
       <div class="titleblock">
         <div><span>Project</span>Shalom Karunwi, portfolio</div>
         <div><span>Drawing</span>Research</div>
-        <div><span>Sheet</span>A-02 of A-06</div>
+        <div><span>Sheet</span>A-02 of A-07</div>
         <a class="turn" href="#technical"><span>Turn to</span>A-03 Technical work</a>
       </div>
     </section>
@@ -551,15 +578,96 @@ html.viewer-open{overflow:hidden}
       <div class="titleblock">
         <div><span>Project</span>Shalom Karunwi, portfolio</div>
         <div><span>Drawing</span>Technical work</div>
-        <div><span>Sheet</span>A-03 of A-06</div>
-        <a class="turn" href="#speaking"><span>Turn to</span>A-04 Speaking</a>
+        <div><span>Sheet</span>A-03 of A-07</div>
+        <a class="turn" href="#slides"><span>Turn to</span>A-04 Presentations</a>
       </div>
     </section>
 
-    <!-- A-04 Speaking -->
-    <section class="page t-speaking" id="speaking" data-index="3" aria-labelledby="speaking-h">
+    <!-- A-04 Presentations -->
+    <section class="page t-slides" id="slides" data-index="3" aria-labelledby="slides-h">
       <header class="sheet-head">
         <span class="sheet-no">A-04</span>
+        <h2 id="slides-h" tabindex="-1">Presentations</h2>
+        <p>Selected slides from decks I designed and wrote</p>
+      </header>
+      <div class="sheet-body">
+        <p class="slides-intro">Slides for ministers, funders, private clients and consumers, each pitched to its audience. Click any slide to see it full size and step through the rest.</p>
+        <p class="redact-note"><i aria-hidden="true"></i>Logos, client names and commercial figures have been removed. Everything else is as delivered.</p>
+        <div class="deck">
+            <h3>Nigeria's Gas Paradox: Rich Reserves, Dark Rooms</h3>
+            <p class="meta">My presentation at the NRGI validation workshop, Abuja, April 2026</p>
+            <p class="what">Why Nigeria's gas does not become power, argued in a handful of slides: the promises, the market failures behind the gap, the cost of standing still and two possible roads to 2030. Built on public data.</p>
+            <ul class="thumbs">
+              <li><button class="slide-thumb" type="button" data-full="files/slides/01.jpg" data-caption="Cover: Nigeria's Gas Paradox" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/01.jpg" alt="Cover: Nigeria's Gas Paradox" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/02.jpg" data-caption="The broken promises: Decade of Gas targets against 2026 reality" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/02.jpg" alt="The broken promises: Decade of Gas targets against 2026 reality" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/03.jpg" data-caption="Why gas doesn't become power: four market failures" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/03.jpg" alt="Why gas doesn't become power: four market failures" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/04.jpg" data-caption="The cost of standing still" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/04.jpg" alt="The cost of standing still" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/05.jpg" data-caption="Two roads to 2030" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/05.jpg" alt="Two roads to 2030" loading="lazy" width="640" height="360"></button></li>
+            </ul>
+          </div>
+        <div class="deck">
+            <h3>Nigeria Clean Cooking Market Analysis</h3>
+            <p class="meta">Strategic presentation for a development partner</p>
+            <p class="what">Market systems, technology pathways, adoption and investment for clean cooking, condensed from a full analysis into an executive deck.</p>
+            <ul class="thumbs">
+              <li><button class="slide-thumb" type="button" data-full="files/slides/06.jpg" data-caption="Cover: Nigeria clean cooking market analysis" data-deck="Nigeria Clean Cooking Market Analysis"><img src="files/slides/thumbs/06.jpg" alt="Cover: Nigeria clean cooking market analysis" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/07.jpg" data-caption="Briquette production value chain" data-deck="Nigeria Clean Cooking Market Analysis"><img src="files/slides/thumbs/07.jpg" alt="Briquette production value chain" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/08.jpg" data-caption="Strategic conclusions" data-deck="Nigeria Clean Cooking Market Analysis"><img src="files/slides/thumbs/08.jpg" alt="Strategic conclusions" loading="lazy" width="640" height="360"></button></li>
+            </ul>
+          </div>
+        <div class="deck">
+            <h3>Solar and Battery Storage: Lease-to-Own Briefing</h3>
+            <p class="meta">Stakeholder briefing for a private client, May 2026. Client name and financials redacted.</p>
+            <p class="what">Making the case to replace round-the-clock diesel with solar and batteries: how the system was sized, three scenarios side by side, the lease-to-own offer and the delivery timeline.</p>
+            <ul class="thumbs">
+              <li><button class="slide-thumb" type="button" data-full="files/slides/09.jpg" data-caption="Design rationale: sizing the system for the worst night" data-deck="Solar and Battery Storage: Lease-to-Own Briefing"><img src="files/slides/thumbs/09.jpg" alt="Design rationale: sizing the system for the worst night" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/10.jpg" data-caption="Scenario comparison across three system sizes" data-deck="Solar and Battery Storage: Lease-to-Own Briefing"><img src="files/slides/thumbs/10.jpg" alt="Scenario comparison across three system sizes" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/11.jpg" data-caption="The proposition: diesel today against three lease options" data-deck="Solar and Battery Storage: Lease-to-Own Briefing"><img src="files/slides/thumbs/11.jpg" alt="The proposition: diesel today against three lease options" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/12.jpg" data-caption="Project timeline" data-deck="Solar and Battery Storage: Lease-to-Own Briefing"><img src="files/slides/thumbs/12.jpg" alt="Project timeline" loading="lazy" width="640" height="360"></button></li>
+            </ul>
+          </div>
+        <div class="deck">
+            <h3>Solar-as-a-Service Launch Deck</h3>
+            <p class="meta">Consumer-facing product deck. Brand and pricing redacted.</p>
+            <p class="what">A completely different register: plain language, bold type and photography to sell a solar subscription to households and small businesses.</p>
+            <ul class="thumbs">
+              <li><button class="slide-thumb" type="button" data-full="files/slides/13.jpg" data-caption="Opening hook: how much did power cost you last month?" data-deck="Solar-as-a-Service Launch Deck"><img src="files/slides/thumbs/13.jpg" alt="Opening hook: how much did power cost you last month?" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/14.jpg" data-caption="We've become too good at managing bad power" data-deck="Solar-as-a-Service Launch Deck"><img src="files/slides/thumbs/14.jpg" alt="We've become too good at managing bad power" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/15.jpg" data-caption="Three product tiers, pricing redacted" data-deck="Solar-as-a-Service Launch Deck"><img src="files/slides/thumbs/15.jpg" alt="Three product tiers, pricing redacted" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/16.jpg" data-caption="The service promise" data-deck="Solar-as-a-Service Launch Deck"><img src="files/slides/thumbs/16.jpg" alt="The service promise" loading="lazy" width="640" height="360"></button></li>
+            </ul>
+          </div>
+        <div class="deck">
+            <h3>Grid Modernisation Study</h3>
+            <p class="meta">Proposal deck for a climate funder</p>
+            <p class="what">How a grid modernisation study was run and what it found, from method to headline results.</p>
+            <ul class="thumbs">
+              <li><button class="slide-thumb" type="button" data-full="files/slides/17.jpg" data-caption="Approach: a five-stage method" data-deck="Grid Modernisation Study"><img src="files/slides/thumbs/17.jpg" alt="Approach: a five-stage method" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/18.jpg" data-caption="Results and lessons" data-deck="Grid Modernisation Study"><img src="files/slides/thumbs/18.jpg" alt="Results and lessons" loading="lazy" width="640" height="360"></button></li>
+            </ul>
+          </div>
+        <div class="deck">
+            <h3>Book Club Decks</h3>
+            <p class="meta">Development economics book discussions</p>
+            <p class="what">Visual summaries of two books for a reading group: complex arguments turned into a clear narrative.</p>
+            <ul class="thumbs">
+              <li><button class="slide-thumb" type="button" data-full="files/slides/19.jpg" data-caption="How Africa Works: the wrong kind of economy" data-deck="Book Club Decks"><img src="files/slides/thumbs/19.jpg" alt="How Africa Works: the wrong kind of economy" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/20.jpg" data-caption="The Great Escape by Angus Deaton: cover" data-deck="Book Club Decks"><img src="files/slides/thumbs/20.jpg" alt="The Great Escape by Angus Deaton: cover" loading="lazy" width="640" height="360"></button></li>
+            </ul>
+          </div>
+      </div>
+      <div class="titleblock">
+        <div><span>Project</span>Shalom Karunwi, portfolio</div>
+        <div><span>Drawing</span>Presentations</div>
+        <div><span>Sheet</span>A-04 of A-07</div>
+        <a class="turn" href="#speaking"><span>Turn to</span>A-05 Speaking</a>
+      </div>
+    </section>
+
+    <!-- A-05 Speaking -->
+    <section class="page t-speaking" id="speaking" data-index="4" aria-labelledby="speaking-h">
+      <header class="sheet-head">
+        <span class="sheet-no">A-05</span>
         <h2 id="speaking-h" tabindex="-1">Speaking and media</h2>
         <p>Panels, workshops and the podcast I produce</p>
       </header>
@@ -617,15 +725,15 @@ html.viewer-open{overflow:hidden}
       <div class="titleblock">
         <div><span>Project</span>Shalom Karunwi, portfolio</div>
         <div><span>Drawing</span>Speaking and media</div>
-        <div><span>Sheet</span>A-04 of A-06</div>
-        <a class="turn" href="#about"><span>Turn to</span>A-05 About</a>
+        <div><span>Sheet</span>A-05 of A-07</div>
+        <a class="turn" href="#about"><span>Turn to</span>A-06 About</a>
       </div>
     </section>
 
     <!-- A-05 About -->
-    <section class="page t-about" id="about" data-index="4" aria-labelledby="about-h">
+    <section class="page t-about" id="about" data-index="5" aria-labelledby="about-h">
       <header class="sheet-head">
-        <span class="sheet-no">A-05</span>
+        <span class="sheet-no">A-06</span>
         <h2 id="about-h" tabindex="-1">About</h2>
         <p>From buildings to systems</p>
       </header>
@@ -661,15 +769,15 @@ html.viewer-open{overflow:hidden}
       <div class="titleblock">
         <div><span>Project</span>Shalom Karunwi, portfolio</div>
         <div><span>Drawing</span>About</div>
-        <div><span>Sheet</span>A-05 of A-06</div>
-        <a class="turn" href="#contact"><span>Turn to</span>A-06 Contact</a>
+        <div><span>Sheet</span>A-06 of A-07</div>
+        <a class="turn" href="#contact"><span>Turn to</span>A-07 Contact</a>
       </div>
     </section>
 
     <!-- A-06 Contact -->
-    <section class="page t-contact" id="contact" data-index="5" aria-labelledby="contact-h">
+    <section class="page t-contact" id="contact" data-index="6" aria-labelledby="contact-h">
       <header class="sheet-head">
-        <span class="sheet-no">A-06</span>
+        <span class="sheet-no">A-07</span>
         <h2 id="contact-h" tabindex="-1">Contact</h2>
         <p>Research, roles and collaboration</p>
       </header>
@@ -691,7 +799,7 @@ html.viewer-open{overflow:hidden}
       <div class="titleblock">
         <div><span>Project</span>Shalom Karunwi, portfolio</div>
         <div><span>Drawing</span>Contact</div>
-        <div><span>Sheet</span>A-06 of A-06</div>
+        <div><span>Sheet</span>A-07 of A-07</div>
         <a class="turn" href="#home"><span>Back to</span>A-01 Home</a>
       </div>
     </section>
@@ -1660,6 +1768,36 @@ html.viewer-open{overflow:hidden}
     var addr=a.getAttribute("href").slice(7).split("?")[0];
     copy(addr).then(function(){say("Email address copied: "+addr)},function(){say("Email: "+addr)});
   });
+})();
+
+(function(){
+  var dlg=document.getElementById("viewer"); if(!dlg||typeof dlg.showModal!=="function") return;
+  var title=dlg.querySelector("#viewer-title"),body=dlg.querySelector(".viewer-body"),link=dlg.querySelector(".viewer-link"),x=dlg.querySelector(".viewer-x");
+  var thumbs=[].slice.call(document.querySelectorAll(".slide-thumb")),i=0,last=null;
+  function render(){
+    var t=thumbs[i];
+    title.textContent=t.getAttribute("data-deck");
+    body.className="viewer-body is-image"; body.innerHTML="";
+    var img=document.createElement("img"); img.src=t.getAttribute("data-full"); img.alt=t.getAttribute("data-caption");
+    var cap=document.createElement("p"); cap.className="cap"; cap.textContent=t.getAttribute("data-caption")+"  ("+(i+1)+" of "+thumbs.length+")";
+    var nav=document.createElement("div"); nav.className="viewer-nav";
+    var pv=document.createElement("button"); pv.type="button"; pv.textContent="Previous"; pv.disabled=i===0; pv.onclick=function(){go(-1)};
+    var nx=document.createElement("button"); nx.type="button"; nx.textContent="Next"; nx.disabled=i===thumbs.length-1; nx.onclick=function(){go(1)};
+    nav.appendChild(pv); nav.appendChild(nx);
+    body.appendChild(img); body.appendChild(cap); body.appendChild(nav);
+    link.textContent="Open image"; link.href=t.getAttribute("data-full"); link.target="_blank"; link.rel="noopener"; link.removeAttribute("download");
+  }
+  function go(d){var n=i+d; if(n<0||n>=thumbs.length) return; i=n; render()}
+  thumbs.forEach(function(t,k){t.addEventListener("click",function(){
+    i=k; last=t; render();
+    document.documentElement.classList.add("viewer-open"); dlg.showModal(); x.focus();
+  })});
+  dlg.addEventListener("keydown",function(e){
+    if(!body.classList.contains("is-image")) return;
+    if(e.key==="ArrowRight"){go(1);e.preventDefault()} else if(e.key==="ArrowLeft"){go(-1);e.preventDefault()}
+  });
+  var sx=null; body.addEventListener("touchstart",function(e){if(body.classList.contains("is-image")) sx=e.touches[0].clientX},{passive:true});
+  body.addEventListener("touchend",function(e){if(sx===null) return; var dx=e.changedTouches[0].clientX-sx; sx=null; if(Math.abs(dx)>50) go(dx<0?1:-1)});
 })();
 </script>
 </body>
