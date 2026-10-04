@@ -256,7 +256,7 @@ html.viewer-open{overflow:hidden}
 .deck h3{font-weight:800;font-size:22px;letter-spacing:-.02em;margin:0 0 4px;color:var(--ink)}
 .deck .meta{font-size:15px;color:var(--muted);margin:0 0 6px}
 .deck p.what{margin:0 0 14px;max-width:70ch}
-.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
 .slide-thumb{display:block;width:100%;padding:0;border:1px solid var(--faint);background:var(--paper);cursor:zoom-in;aspect-ratio:16/9;overflow:hidden;transition:border-color .2s ease,transform .2s ease}
 .slide-thumb img{display:block;width:100%;height:100%;object-fit:cover}
 .slide-thumb:hover{border-color:var(--ink);transform:translateY(-2px)}
@@ -588,71 +588,86 @@ html.viewer-open{overflow:hidden}
       <header class="sheet-head">
         <span class="sheet-no">A-04</span>
         <h2 id="slides-h" tabindex="-1">Presentations</h2>
-        <p>Selected slides from decks I designed and wrote</p>
+        <p>Decks I designed and wrote</p>
       </header>
       <div class="sheet-body">
-        <p class="slides-intro">Slides for ministers, funders, private clients and consumers, each pitched to its audience. Click any slide to see it full size and step through the rest.</p>
-        <p class="redact-note"><i aria-hidden="true"></i>Logos, client names and commercial figures have been removed. Everything else is as delivered.</p>
+        <p class="slides-intro">Seven decks, four slides each, in presentation order. Click any slide to view it full size.</p>
+        <p class="redact-note"><i aria-hidden="true"></i>Logos, client names and commercial figures removed.</p>
         <div class="deck">
-            <h3>Nigeria's Gas Paradox: Rich Reserves, Dark Rooms</h3>
-            <p class="meta">My presentation at the NRGI validation workshop, Abuja, April 2026</p>
-            <p class="what">Why Nigeria's gas does not become power, argued in a handful of slides: the promises, the market failures behind the gap, the cost of standing still and two possible roads to 2030. Built on public data.</p>
+            <h3>Nigeria's Gas Paradox</h3>
+            <p class="meta">Workshop presentation, April 2026</p>
+            <p class="what">Why abundant gas hasn't become reliable power.</p>
             <ul class="thumbs">
-              <li><button class="slide-thumb" type="button" data-full="files/slides/01.jpg" data-caption="Cover: Nigeria's Gas Paradox" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/01.jpg" alt="Cover: Nigeria's Gas Paradox" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/02.jpg" data-caption="The broken promises: Decade of Gas targets against 2026 reality" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/02.jpg" alt="The broken promises: Decade of Gas targets against 2026 reality" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/03.jpg" data-caption="Why gas doesn't become power: four market failures" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/03.jpg" alt="Why gas doesn't become power: four market failures" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/04.jpg" data-caption="The cost of standing still" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/04.jpg" alt="The cost of standing still" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/05.jpg" data-caption="Two roads to 2030" data-deck="Nigeria's Gas Paradox: Rich Reserves, Dark Rooms"><img src="files/slides/thumbs/05.jpg" alt="Two roads to 2030" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/01.jpg" data-caption="Cover" data-deck="Nigeria's Gas Paradox"><img src="files/slides/thumbs/01.jpg" alt="Nigeria's Gas Paradox: Cover" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/02.jpg" data-caption="Promises against reality" data-deck="Nigeria's Gas Paradox"><img src="files/slides/thumbs/02.jpg" alt="Nigeria's Gas Paradox: Promises against reality" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/03.jpg" data-caption="Four market failures" data-deck="Nigeria's Gas Paradox"><img src="files/slides/thumbs/03.jpg" alt="Nigeria's Gas Paradox: Four market failures" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/04.jpg" data-caption="Two roads to 2030" data-deck="Nigeria's Gas Paradox"><img src="files/slides/thumbs/04.jpg" alt="Nigeria's Gas Paradox: Two roads to 2030" loading="lazy" width="640" height="360"></button></li>
             </ul>
           </div>
         <div class="deck">
-            <h3>Nigeria Clean Cooking Market Analysis</h3>
-            <p class="meta">Strategic presentation for a development partner</p>
-            <p class="what">Market systems, technology pathways, adoption and investment for clean cooking, condensed from a full analysis into an executive deck.</p>
+            <h3>Clean Cooking Market Analysis</h3>
+            <p class="meta">Strategy deck for a development partner</p>
+            <p class="what">Market, technology and investment pathways for clean cooking.</p>
             <ul class="thumbs">
-              <li><button class="slide-thumb" type="button" data-full="files/slides/06.jpg" data-caption="Cover: Nigeria clean cooking market analysis" data-deck="Nigeria Clean Cooking Market Analysis"><img src="files/slides/thumbs/06.jpg" alt="Cover: Nigeria clean cooking market analysis" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/07.jpg" data-caption="Briquette production value chain" data-deck="Nigeria Clean Cooking Market Analysis"><img src="files/slides/thumbs/07.jpg" alt="Briquette production value chain" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/08.jpg" data-caption="Strategic conclusions" data-deck="Nigeria Clean Cooking Market Analysis"><img src="files/slides/thumbs/08.jpg" alt="Strategic conclusions" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/05.jpg" data-caption="Cover" data-deck="Clean Cooking Market Analysis"><img src="files/slides/thumbs/05.jpg" alt="Clean Cooking Market Analysis: Cover" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/06.jpg" data-caption="The problem" data-deck="Clean Cooking Market Analysis"><img src="files/slides/thumbs/06.jpg" alt="Clean Cooking Market Analysis: The problem" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/07.jpg" data-caption="Briquette value chain" data-deck="Clean Cooking Market Analysis"><img src="files/slides/thumbs/07.jpg" alt="Clean Cooking Market Analysis: Briquette value chain" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/08.jpg" data-caption="Strategic conclusions" data-deck="Clean Cooking Market Analysis"><img src="files/slides/thumbs/08.jpg" alt="Clean Cooking Market Analysis: Strategic conclusions" loading="lazy" width="640" height="360"></button></li>
             </ul>
           </div>
         <div class="deck">
-            <h3>Solar and Battery Storage: Lease-to-Own Briefing</h3>
-            <p class="meta">Stakeholder briefing for a private client, May 2026. Client name and financials redacted.</p>
-            <p class="what">Making the case to replace round-the-clock diesel with solar and batteries: how the system was sized, three scenarios side by side, the lease-to-own offer and the delivery timeline.</p>
+            <h3>Solar and Battery Lease-to-Own</h3>
+            <p class="meta">Client briefing, May 2026</p>
+            <p class="what">Replacing round-the-clock diesel with solar and storage.</p>
             <ul class="thumbs">
-              <li><button class="slide-thumb" type="button" data-full="files/slides/09.jpg" data-caption="Design rationale: sizing the system for the worst night" data-deck="Solar and Battery Storage: Lease-to-Own Briefing"><img src="files/slides/thumbs/09.jpg" alt="Design rationale: sizing the system for the worst night" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/10.jpg" data-caption="Scenario comparison across three system sizes" data-deck="Solar and Battery Storage: Lease-to-Own Briefing"><img src="files/slides/thumbs/10.jpg" alt="Scenario comparison across three system sizes" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/11.jpg" data-caption="The proposition: diesel today against three lease options" data-deck="Solar and Battery Storage: Lease-to-Own Briefing"><img src="files/slides/thumbs/11.jpg" alt="The proposition: diesel today against three lease options" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/12.jpg" data-caption="Project timeline" data-deck="Solar and Battery Storage: Lease-to-Own Briefing"><img src="files/slides/thumbs/12.jpg" alt="Project timeline" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/09.jpg" data-caption="The client's problem" data-deck="Solar and Battery Lease-to-Own"><img src="files/slides/thumbs/09.jpg" alt="Solar and Battery Lease-to-Own: The client's problem" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/10.jpg" data-caption="Sizing the system" data-deck="Solar and Battery Lease-to-Own"><img src="files/slides/thumbs/10.jpg" alt="Solar and Battery Lease-to-Own: Sizing the system" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/11.jpg" data-caption="Three scenarios" data-deck="Solar and Battery Lease-to-Own"><img src="files/slides/thumbs/11.jpg" alt="Solar and Battery Lease-to-Own: Three scenarios" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/12.jpg" data-caption="The offer" data-deck="Solar and Battery Lease-to-Own"><img src="files/slides/thumbs/12.jpg" alt="Solar and Battery Lease-to-Own: The offer" loading="lazy" width="640" height="360"></button></li>
             </ul>
           </div>
         <div class="deck">
-            <h3>Solar-as-a-Service Launch Deck</h3>
-            <p class="meta">Consumer-facing product deck. Brand and pricing redacted.</p>
-            <p class="what">A completely different register: plain language, bold type and photography to sell a solar subscription to households and small businesses.</p>
+            <h3>Solar-as-a-Service Launch</h3>
+            <p class="meta">Consumer product deck</p>
+            <p class="what">Selling solar on subscription to households.</p>
             <ul class="thumbs">
-              <li><button class="slide-thumb" type="button" data-full="files/slides/13.jpg" data-caption="Opening hook: how much did power cost you last month?" data-deck="Solar-as-a-Service Launch Deck"><img src="files/slides/thumbs/13.jpg" alt="Opening hook: how much did power cost you last month?" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/14.jpg" data-caption="We've become too good at managing bad power" data-deck="Solar-as-a-Service Launch Deck"><img src="files/slides/thumbs/14.jpg" alt="We've become too good at managing bad power" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/15.jpg" data-caption="Three product tiers, pricing redacted" data-deck="Solar-as-a-Service Launch Deck"><img src="files/slides/thumbs/15.jpg" alt="Three product tiers, pricing redacted" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/16.jpg" data-caption="The service promise" data-deck="Solar-as-a-Service Launch Deck"><img src="files/slides/thumbs/16.jpg" alt="The service promise" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/13.jpg" data-caption="The hook" data-deck="Solar-as-a-Service Launch"><img src="files/slides/thumbs/13.jpg" alt="Solar-as-a-Service Launch: The hook" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/14.jpg" data-caption="The pain point" data-deck="Solar-as-a-Service Launch"><img src="files/slides/thumbs/14.jpg" alt="Solar-as-a-Service Launch: The pain point" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/15.jpg" data-caption="How it works" data-deck="Solar-as-a-Service Launch"><img src="files/slides/thumbs/15.jpg" alt="Solar-as-a-Service Launch: How it works" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/16.jpg" data-caption="Product tiers" data-deck="Solar-as-a-Service Launch"><img src="files/slides/thumbs/16.jpg" alt="Solar-as-a-Service Launch: Product tiers" loading="lazy" width="640" height="360"></button></li>
             </ul>
           </div>
         <div class="deck">
             <h3>Grid Modernisation Study</h3>
             <p class="meta">Proposal deck for a climate funder</p>
-            <p class="what">How a grid modernisation study was run and what it found, from method to headline results.</p>
+            <p class="what">Readying Nigeria's grid for large-scale renewables.</p>
             <ul class="thumbs">
-              <li><button class="slide-thumb" type="button" data-full="files/slides/17.jpg" data-caption="Approach: a five-stage method" data-deck="Grid Modernisation Study"><img src="files/slides/thumbs/17.jpg" alt="Approach: a five-stage method" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/18.jpg" data-caption="Results and lessons" data-deck="Grid Modernisation Study"><img src="files/slides/thumbs/18.jpg" alt="Results and lessons" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/17.jpg" data-caption="Cover" data-deck="Grid Modernisation Study"><img src="files/slides/thumbs/17.jpg" alt="Grid Modernisation Study: Cover" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/18.jpg" data-caption="The landscape" data-deck="Grid Modernisation Study"><img src="files/slides/thumbs/18.jpg" alt="Grid Modernisation Study: The landscape" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/19.jpg" data-caption="The method" data-deck="Grid Modernisation Study"><img src="files/slides/thumbs/19.jpg" alt="Grid Modernisation Study: The method" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/20.jpg" data-caption="Results and lessons" data-deck="Grid Modernisation Study"><img src="files/slides/thumbs/20.jpg" alt="Grid Modernisation Study: Results and lessons" loading="lazy" width="640" height="360"></button></li>
             </ul>
           </div>
         <div class="deck">
-            <h3>Book Club Decks</h3>
-            <p class="meta">Development economics book discussions</p>
-            <p class="what">Visual summaries of two books for a reading group: complex arguments turned into a clear narrative.</p>
+            <h3>How Africa Works</h3>
+            <p class="meta">Book discussion deck, Joe Studwell</p>
+            <p class="what">Why some economies develop and others stall.</p>
             <ul class="thumbs">
-              <li><button class="slide-thumb" type="button" data-full="files/slides/19.jpg" data-caption="How Africa Works: the wrong kind of economy" data-deck="Book Club Decks"><img src="files/slides/thumbs/19.jpg" alt="How Africa Works: the wrong kind of economy" loading="lazy" width="640" height="360"></button></li>
-              <li><button class="slide-thumb" type="button" data-full="files/slides/20.jpg" data-caption="The Great Escape by Angus Deaton: cover" data-deck="Book Club Decks"><img src="files/slides/thumbs/20.jpg" alt="The Great Escape by Angus Deaton: cover" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/21.jpg" data-caption="Cover" data-deck="How Africa Works"><img src="files/slides/thumbs/21.jpg" alt="How Africa Works: Cover" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/22.jpg" data-caption="Africa's core constraint" data-deck="How Africa Works"><img src="files/slides/thumbs/22.jpg" alt="How Africa Works: Africa's core constraint" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/23.jpg" data-caption="The wrong kind of economy" data-deck="How Africa Works"><img src="files/slides/thumbs/23.jpg" alt="How Africa Works: The wrong kind of economy" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/24.jpg" data-caption="Countries that got it right" data-deck="How Africa Works"><img src="files/slides/thumbs/24.jpg" alt="How Africa Works: Countries that got it right" loading="lazy" width="640" height="360"></button></li>
+            </ul>
+          </div>
+        <div class="deck">
+            <h3>The Great Escape</h3>
+            <p class="meta">Book discussion deck, Angus Deaton</p>
+            <p class="what">Progress, and who it leaves behind.</p>
+            <ul class="thumbs">
+              <li><button class="slide-thumb" type="button" data-full="files/slides/25.jpg" data-caption="Cover" data-deck="The Great Escape"><img src="files/slides/thumbs/25.jpg" alt="The Great Escape: Cover" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/26.jpg" data-caption="The central metaphor" data-deck="The Great Escape"><img src="files/slides/thumbs/26.jpg" alt="The Great Escape: The central metaphor" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/27.jpg" data-caption="The health revolution" data-deck="The Great Escape"><img src="files/slides/thumbs/27.jpg" alt="The Great Escape: The health revolution" loading="lazy" width="640" height="360"></button></li>
+              <li><button class="slide-thumb" type="button" data-full="files/slides/28.jpg" data-caption="The wealth revolution" data-deck="The Great Escape"><img src="files/slides/thumbs/28.jpg" alt="The Great Escape: The wealth revolution" loading="lazy" width="640" height="360"></button></li>
             </ul>
           </div>
       </div>
