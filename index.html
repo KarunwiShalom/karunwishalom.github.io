@@ -25,6 +25,10 @@
   --track-head:-.025em;     /* smaller headings */
   --leading:1.65;           /* body line height */
   --fs-body:17px;           /* body text, never smaller on mobile */
+  /* A-01 hero */
+  --hero-bg:#1F2326; --hero-ink:#EEEAE3; --hero-muted:#A7ACA8;
+  --sheet-radius:22px; --grid-opacity:.4;
+  --flaps-h:0px;            /* height of the sticky flap strip, set when it goes sticky */
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -38,7 +42,7 @@
 .t-about{--tone:#E3CDAA;--frame:#5E4226}
 .t-contact{--tone:#F7C67E;--frame:#7C4300}
 @media (prefers-color-scheme:dark){
-  :root{--desk:#1D1713;--text:#F2E9E1}
+  :root{--desk:#1D1713;--text:#F2E9E1;--hero-bg:#0E1012}
   .t-home{--tone:#4A2A18;--frame:#F7C39A}
   .t-research{--tone:#3F3312;--frame:#EBCB6A}
   .t-technical{--tone:#4A251C;--frame:#F4A893}
@@ -128,10 +132,38 @@ img,iframe,svg{max-width:100%}
 figcaption{font-family:var(--display);font-size:15px;color:var(--muted);margin-top:8px}
 
 /* A-01 Home */
+/* Dark drafting table. Sticky, so the white sheet (.sheet-up) slides up over it on scroll. */
+.hero-stage{position:relative;timeline-scope:--sheet}
+.hero-dark{
+  --ink:var(--hero-ink);--muted:var(--hero-muted);--paper:transparent;
+  position:sticky;top:var(--flaps-h);z-index:0;margin:7px 7px 0;overflow:hidden;box-sizing:border-box;
+  min-height:min(calc(100svh - var(--flaps-h) - 110px),820px);
+  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:center;
+  padding:56px 40px 88px;color:var(--ink);background:var(--hero-bg);isolation:isolate;
+}
+.hero-dark::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:url("files/graphics/tile-grid.svg") 0 0/120px 120px;opacity:var(--grid-opacity)}
+.hero-dark h1{font-family:var(--display);font-weight:var(--w-display);font-size:clamp(56px,8.4vw,118px);line-height:.92;letter-spacing:var(--track-display);margin:0 0 20px;color:var(--ink)}
+.hero-dark h1 span{display:block}
+.hero-dark h1:focus{outline:none}
+.hero-dark .role{color:var(--muted);margin:0;max-width:24ch}
+.hero-plan{aspect-ratio:1/1;width:100%;max-width:560px;justify-self:end}
+.hero-plan img{object-fit:contain;filter:invert(1);opacity:.8}
+.sheet-up{
+  position:relative;z-index:1;margin:-28px 7px 0;background:var(--sheet);
+  border-radius:var(--sheet-radius) var(--sheet-radius) 0 0;
+  box-shadow:0 -1px 0 color-mix(in srgb,var(--frame) 55%,transparent),0 -18px 40px rgba(0,0,0,.22);
+}
+@supports (animation-timeline:view()){
+  .sheet-up{view-timeline:--sheet block}
+  .hero-dark > *{animation:heroRecede linear both;animation-timeline:--sheet;animation-range:entry 0% entry 85%}
+}
+@keyframes heroRecede{to{opacity:.2;transform:translateY(-40px)}}
+@media (prefers-reduced-motion:reduce){
+  .hero-dark{position:relative;top:auto}
+  .hero-dark > *{animation:none}
+}
 .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;align-items:center;padding:40px 32px 36px}
-.hero h1{font-family:var(--display);font-weight:var(--w-display);font-size:clamp(56px,8.4vw,118px);line-height:.92;letter-spacing:var(--track-display);margin:0 0 24px;color:var(--ink)}
-.hero h1 span{display:block}
-.hero h1:focus{outline:none}
 .role{font-family:var(--display);font-weight:var(--w-strong);color:var(--ink);font-size:clamp(19px,2vw,23px);margin:0 0 14px}
 .lede{max-width:36ch;font-size:19px;line-height:1.6;margin:0 0 28px}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
@@ -328,8 +360,10 @@ html.viewer-open{overflow:hidden}
 .links a:hover span:first-child{color:var(--ink)}
 
 @media (max-width:900px){
-  .hero,.report.lead,.project,.podcast,.about,.contact,.talk{grid-template-columns:1fr}
-  .hero{padding:28px 20px}
+  .hero,.hero-dark,.report.lead,.project,.podcast,.about,.contact,.talk{grid-template-columns:1fr}
+  .hero{padding:36px 20px 28px}
+  .hero-dark{padding:36px 20px 56px;gap:4px;align-content:start}
+  .hero-plan{aspect-ratio:4/5;width:min(100%,calc(42svh * .8));max-width:none}
   .reports{grid-template-columns:1fr}
   .toolkit,.certs ul{grid-template-columns:1fr}
   .titleblock{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -370,10 +404,21 @@ html.viewer-open{overflow:hidden}
 
     <!-- A-01 Home -->
     <section class="page t-home is-active" id="home" data-index="0" aria-labelledby="home-h">
-      <div class="hero">
-        <div>
+      <div class="hero-stage">
+      <!-- Dark drafting-table hero. It stays put while the white sheet below slides up over it. -->
+      <header class="hero-dark">
+        <div class="hero-copy">
           <h1 id="home-h" tabindex="-1"><span>Shalom</span><span>Karunwi</span></h1>
           <p class="role">Strategy and energy analyst, Nigeria's power sector</p>
+          <!-- Logo mark (files/graphics/logo-sk.svg) goes here once it is finished by hand. -->
+        </div>
+        <figure class="photo hero-plan">
+          <img src="files/graphics/hero-plan.png" alt="" width="928" height="1152" onerror="this.parentNode.classList.add('missing')">
+          <span class="ph">Drawing to add: files/graphics/hero-plan.png</span>
+        </figure>
+      </header>
+      <div class="hero sheet-up">
+        <div>
           <p class="lede">Trained as an architect, I now read a different kind of structure: why Nigeria's electricity sector works the way it does, and what the numbers say about how it could work better.</p>
           <div class="actions">
             <a class="btn solid" href="#research">See the research</a>
@@ -413,6 +458,7 @@ html.viewer-open{overflow:hidden}
             </a>
           </svg>
         </figure>
+      </div>
       </div>
       <div class="titleblock">
         <div><span>Project</span>Shalom Karunwi, portfolio</div>
