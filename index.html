@@ -206,7 +206,7 @@ figcaption{font-family:var(--display);font-size:15px;color:var(--muted);margin-t
 .score .bar i{position:absolute;inset:0 auto 0 0;background:#9A9A9A}
 .score .bar.red i{background:var(--ink)}
 .score-total{grid-column:1/-1;color:var(--ink);font-weight:var(--w-display);font-size:56px;line-height:1;margin:0 0 8px;letter-spacing:var(--track-display)}
-.score-total small{font-weight:500;font-size:18px;color:var(--muted);margin-left:8px}
+.score-total small{letter-spacing:normal;font-weight:500;font-size:18px;color:var(--muted);margin-left:8px}
 .contrib{margin-top:28px}
 .contrib h3{font-family:var(--display);font-weight:var(--w-head);font-size:20px;margin:0 0 10px;color:var(--ink);letter-spacing:var(--track-head)}
 .contrib ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--faint)}
@@ -329,7 +329,7 @@ html.viewer-open{overflow:hidden}
 .podcast{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:32px;align-items:start}
 .podcast h3{font-family:var(--display);font-weight:var(--w-display);font-size:clamp(28px,3.4vw,40px);line-height:1;margin:0 0 14px;color:var(--ink);letter-spacing:var(--track-display)}
 .podcast .count{font-family:var(--display);font-weight:var(--w-display);font-size:72px;line-height:1;color:var(--ink);margin:18px 0 0;letter-spacing:var(--track-display)}
-.podcast .count span{display:block;font-weight:500;font-size:17px;color:var(--muted)}
+.podcast .count span{letter-spacing:normal;display:block;font-weight:500;font-size:17px;color:var(--muted)}
 .ratio{position:relative;padding-top:56.25%}
 .ratio iframe{position:absolute;inset:0;height:100%}
 
@@ -387,6 +387,41 @@ html.viewer-open{overflow:hidden}
   .dims text.note{font-size:19px}
   .dims text.big{font-size:36px}
 }
+/* Flap icons: sheet number plus icon replaces the long labels on small screens. Icons are masks, so they take the flap colour. */
+.ico{display:none;flex:0 0 auto;width:28px;height:28px;background:currentColor;-webkit-mask:var(--icon) center/contain no-repeat;mask:var(--icon) center/contain no-repeat}
+.ico-home{--icon:url("files/graphics/icon-home.svg")}
+.ico-research{--icon:url("files/graphics/icon-research.svg")}
+.ico-technical{--icon:url("files/graphics/icon-technical.svg")}
+.ico-presentations{--icon:url("files/graphics/icon-presentations.svg")}
+.ico-speaking{--icon:url("files/graphics/icon-speaking.svg")}
+.ico-about{--icon:url("files/graphics/icon-about.svg")}
+.ico-contact{--icon:url("files/graphics/icon-contact.svg")}
+@media (max-width:560px){
+  .flap{display:inline-flex;align-items:center;gap:7px}
+  .flap b{margin-right:0}
+  .ico{display:block}
+}
+/* Sticky flap strip on phones, clear of the notch */
+@media (max-width:767px){
+  .flaps{position:sticky;top:0;z-index:6;margin:0 -24px;padding:calc(env(safe-area-inset-top,0px) + 8px) 30px 0;
+    background-color:var(--tone,var(--desk));transition:background-color .6s ease}
+}
+@media (max-width:560px){.flaps{margin:0 -12px;padding-left:20px;padding-right:20px}}
+
+/* A-03 project covers: phones and tablets only, above the text */
+.cover{display:none;aspect-ratio:16/10;margin:0 0 18px;background:var(--paper);border:1px solid var(--faint)}
+.cover img{object-fit:contain}
+@media (prefers-color-scheme:dark){.cover img{filter:invert(1)}}
+@media (max-width:900px){.cover{display:block}}
+
+/* Dimension divider between the main blocks of a sheet. The SVG is loaded inline by the script so its strokes stay 1px at any width. */
+.divider{height:30px;margin:36px 0 30px;color:var(--muted)}
+.divider svg{display:block;width:100%;height:100%;overflow:visible}
+.divider.missing{background:
+  linear-gradient(to top right,transparent calc(50% - .6px),var(--muted) calc(50% - .6px),var(--muted) calc(50% + .6px),transparent calc(50% + .6px)),
+  linear-gradient(to bottom right,transparent calc(50% - .6px),var(--muted) calc(50% - .6px),var(--muted) calc(50% + .6px),transparent calc(50% + .6px)),var(--paper)}
+.divider + .contrib,.divider + .guided,.divider + .toolkit,.divider + .certs{margin-top:0;padding-top:0;border-top:none}
+
 /* Motion inside each sheet. Only runs when the script adds .motion to <html>, which it never does under reduced motion.
    Section reveal: each block fades and rises once as it enters. Focus list: on long lists the item at the
    vertical centre of the screen stays full ink and its neighbours fade. Opacity and transform only. */
@@ -404,13 +439,13 @@ html.viewer-open{overflow:hidden}
 
 <div class="book">
   <nav class="flaps" aria-label="Sheets">
-    <a class="flap t-home" href="#home" data-page="home"><b>A-01</b><span class="lbl">Home</span></a>
-    <a class="flap t-research" href="#research" data-page="research"><b>A-02</b><span class="lbl">Research</span></a>
-    <a class="flap t-technical" href="#technical" data-page="technical"><b>A-03</b><span class="lbl">Technical work</span></a>
-    <a class="flap t-slides" href="#slides" data-page="slides"><b>A-04</b><span class="lbl">Presentations</span></a>
-    <a class="flap t-speaking" href="#speaking" data-page="speaking"><b>A-05</b><span class="lbl">Speaking</span></a>
-    <a class="flap t-about" href="#about" data-page="about"><b>A-06</b><span class="lbl">About</span></a>
-    <a class="flap t-contact" href="#contact" data-page="contact"><b>A-07</b><span class="lbl">Contact</span></a>
+    <a class="flap t-home" href="#home" data-page="home"><b>A-01</b><i class="ico ico-home" aria-hidden="true"></i><span class="lbl">Home</span></a>
+    <a class="flap t-research" href="#research" data-page="research"><b>A-02</b><i class="ico ico-research" aria-hidden="true"></i><span class="lbl">Research</span></a>
+    <a class="flap t-technical" href="#technical" data-page="technical"><b>A-03</b><i class="ico ico-technical" aria-hidden="true"></i><span class="lbl">Technical work</span></a>
+    <a class="flap t-slides" href="#slides" data-page="slides"><b>A-04</b><i class="ico ico-presentations" aria-hidden="true"></i><span class="lbl">Presentations</span></a>
+    <a class="flap t-speaking" href="#speaking" data-page="speaking"><b>A-05</b><i class="ico ico-speaking" aria-hidden="true"></i><span class="lbl">Speaking</span></a>
+    <a class="flap t-about" href="#about" data-page="about"><b>A-06</b><i class="ico ico-about" aria-hidden="true"></i><span class="lbl">About</span></a>
+    <a class="flap t-contact" href="#contact" data-page="contact"><b>A-07</b><i class="ico ico-contact" aria-hidden="true"></i><span class="lbl">Contact</span></a>
   </nav>
 
   <main class="pages">
@@ -533,6 +568,7 @@ html.viewer-open{overflow:hidden}
             <a class="go" href="https://www.linkedin.com/pulse/wte-models-nigerian-landscape-thenextier-iysie/" target="_blank" rel="noopener">Read on LinkedIn</a>
           </article>
         </div>
+        <div class="divider" aria-hidden="true"></div>
         <div class="contrib">
           <h3>Policy and advisory contributions</h3>
           <ul>
@@ -561,6 +597,7 @@ html.viewer-open{overflow:hidden}
       <div class="sheet-body">
         <article class="project">
           <div>
+            <figure class="photo cover"><img src="files/graphics/cover-attribution.png" alt="" width="1280" height="800" loading="lazy" onerror="this.parentNode.classList.add('missing')"><span class="ph">Drawing to add: files/graphics/cover-attribution.png</span></figure>
             <h3>Marketing attribution for a professional services platform</h3>
             <p class="meta">Hibarr, 2026</p>
             <p>The client's data lived in six places, and anonymous website visits never connected to the customers they became. I built an identity bridge in PostgreSQL that resolved anonymous sessions to backend user records, then compared position-based and time-decay attribution models.</p>
@@ -583,6 +620,7 @@ html.viewer-open{overflow:hidden}
         </article>
         <article class="project">
           <div>
+            <figure class="photo cover"><img src="files/graphics/cover-worldcup.png" alt="" width="1280" height="800" loading="lazy" onerror="this.parentNode.classList.add('missing')"><span class="ph">Drawing to add: files/graphics/cover-worldcup.png</span></figure>
             <h3>Gold in North America</h3>
             <p class="meta">2026 World Cup prediction system, independent</p>
             <p>A full pipeline from raw match data to live probabilities: a Poisson model blending historical form with squad quality, run through 10,000 Monte Carlo simulations of the tournament.</p>
@@ -597,6 +635,7 @@ html.viewer-open{overflow:hidden}
         </article>
         <article class="project">
           <div>
+            <figure class="photo cover"><img src="files/graphics/cover-payments.png" alt="" width="1280" height="800" loading="lazy" onerror="this.parentNode.classList.add('missing')"><span class="ph">Drawing to add: files/graphics/cover-payments.png</span></figure>
             <h3>Instant payments survey dashboard</h3>
             <p class="meta">AfricaNenda Foundation, with the World Bank and UNECA, 2026</p>
             <p>A dashboard for 2,279 respondents across 18 African countries, letting analysts cut results by gender, age, income, economic role and country. Multi-select survey answers were unpivoted into more than 15 related tables. A second wave followed.</p>
@@ -612,6 +651,7 @@ html.viewer-open{overflow:hidden}
             </svg>
           </div>
         </article>
+        <div class="divider" aria-hidden="true"></div>
         <div class="guided">
           <div class="guided-head">
             <h3>Guided projects</h3>
@@ -650,6 +690,7 @@ html.viewer-open{overflow:hidden}
             </li>
           </ul>
         </div>
+        <div class="divider" aria-hidden="true"></div>
         <div class="toolkit">
           <div><h4>Analysis</h4><p>Power BI and DAX, Python, SQL, Excel with Power Pivot and Power Query, Tableau, SPSS, R.</p></div>
           <div><h4>Data engineering</h4><p>dbt, BigQuery, PostgreSQL, Streamlit, and Python automation on the Microsoft Graph API.</p></div>
@@ -674,6 +715,7 @@ html.viewer-open{overflow:hidden}
       <div class="sheet-body">
         <p class="slides-intro">Seven decks, four slides each, in presentation order. Click any slide to view it full size.</p>
         <p class="redact-note"><i aria-hidden="true"></i>Logos, client names and commercial figures removed.</p>
+        <div class="divider" aria-hidden="true"></div>
         <div class="deck">
             <h3>Nigeria's Gas Paradox</h3>
             <p class="meta">Workshop presentation, April 2026</p>
@@ -820,6 +862,7 @@ html.viewer-open{overflow:hidden}
             </div>
           </li>
         </ol>
+        <div class="divider" aria-hidden="true"></div>
         <div class="podcast">
           <div>
             <h3>Connecting the Dots</h3>
@@ -868,6 +911,7 @@ html.viewer-open{overflow:hidden}
             </ol>
           </div>
         </div>
+        <div class="divider" aria-hidden="true"></div>
         <div class="certs">
           <h3>Certifications</h3>
           <ul>
@@ -1956,6 +2000,31 @@ html.viewer-open{overflow:hidden}
     });
   },{threshold:1});
   document.querySelectorAll(".page > .titleblock").forEach(function(tb){ end.observe(tb) });
+})();
+/* Sticky flap strip: tell the hero how tall it is, so the hero sticks just below it */
+(function(){
+  var flaps=document.querySelector(".flaps"), mq=window.matchMedia("(max-width:767px)");
+  if(!flaps) return;
+  function set(){ document.documentElement.style.setProperty("--flaps-h",mq.matches?flaps.offsetHeight+"px":"0px") }
+  set();
+  if("ResizeObserver" in window) new ResizeObserver(set).observe(flaps);
+  if(mq.addEventListener) mq.addEventListener("change",set);
+})();
+
+/* Dimension dividers: load the supplied SVG inline so strokes stay crisp when it stretches */
+(function(){
+  var slots=document.querySelectorAll(".divider");
+  if(!slots.length||!window.fetch) return;
+  fetch("files/graphics/divider-dimension.svg").then(function(r){ if(!r.ok) throw 0; return r.text() }).then(function(text){
+    var svg=new DOMParser().parseFromString(text,"image/svg+xml").documentElement;
+    if(svg.nodeName!=="svg") throw 0;
+    Array.prototype.forEach.call(svg.querySelectorAll("metadata"),function(m){ m.remove() });
+    svg.removeAttribute("width"); svg.removeAttribute("height");
+    svg.setAttribute("preserveAspectRatio","none"); svg.setAttribute("focusable","false");
+    Array.prototype.forEach.call(svg.querySelectorAll("path,line,polyline,rect,circle"),function(el){ el.setAttribute("vector-effect","non-scaling-stroke") });
+    var html=new XMLSerializer().serializeToString(svg);
+    slots.forEach(function(d){ d.innerHTML=html });
+  }).catch(function(){ slots.forEach(function(d){ d.classList.add("missing") }) });
 })();
 </script>
 </body>
