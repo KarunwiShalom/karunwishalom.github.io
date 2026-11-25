@@ -207,6 +207,9 @@ figcaption{font-family:var(--display);font-size:15px;color:var(--muted);margin-t
 .score .bar.red i{background:var(--ink)}
 .score-total{grid-column:1/-1;color:var(--ink);font-weight:var(--w-display);font-size:56px;line-height:1;margin:0 0 8px;letter-spacing:var(--track-display)}
 .score-total small{letter-spacing:normal;font-weight:500;font-size:18px;color:var(--muted);margin-left:8px}
+.report .restated{font-family:var(--display);font-size:16px;color:var(--muted);margin:-4px 0 14px}
+/* An odd card left alone on the last row spans both columns */
+.reports > .report:last-child:nth-child(even){grid-column:1/-1}
 .contrib{margin-top:28px}
 .contrib h3{font-family:var(--display);font-weight:var(--w-head);font-size:20px;margin:0 0 10px;color:var(--ink);letter-spacing:var(--track-head)}
 .contrib ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--faint)}
@@ -225,6 +228,15 @@ figcaption{font-family:var(--display);font-size:15px;color:var(--muted);margin-t
 .embed iframe{display:block;width:100%;border:0}
 .embed-cap{font-family:var(--display);font-size:15px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--ink);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .figure{border:1px solid var(--ink);padding:22px;background:var(--paper)}
+/* Wide dashboard screenshot: full width on desktop; on phones it keeps its height and scrolls sideways */
+.project > *{min-width:0}
+.shot-scroll{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;background:#fff}
+.shot-scroll img{display:block;width:100%;height:auto}
+.shot .hint-m{display:none}
+@media (max-width:900px){
+  .shot-scroll img{width:auto;max-width:none;height:min(320px,62vw)}
+  .shot .hint-m{display:inline}.shot .hint-d{display:none}
+}
 .figure svg{display:block;width:100%;height:auto}
 .figure svg text{font-family:var(--display);font-size:13px;fill:var(--ink)}
 .toolkit{margin-top:28px;padding-top:24px;border-top:1px solid var(--ink);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
@@ -386,6 +398,7 @@ html.viewer-open{overflow:hidden}
   .dims text{font-size:21px}
   .dims text.note{font-size:19px}
   .dims text.big{font-size:36px}
+  .dims text.tight{font-size:19px}
 }
 /* Flap icons: sheet number plus icon replaces the long labels on small screens. Icons are masks, so they take the flap colour. */
 .ico{display:none;flex:0 0 auto;width:28px;height:28px;background:currentColor;-webkit-mask:var(--icon) center/contain no-repeat;mask:var(--icon) center/contain no-repeat}
@@ -483,10 +496,10 @@ html.viewer-open{overflow:hidden}
             <rect class="frame" x="40" y="40" width="360" height="450"/>
             <!-- vertical dimension -->
             <path class="dim" pathLength="1" d="M432 40 V490 M424 40 H440 M424 490 H440 M428 48 L432 40 L436 48 M428 482 L432 490 L436 482"/>
-            <a href="#research" aria-label="62.7, the N-PSMI baseline: see the research">
+            <a href="#research" aria-label="63.5 on the N-PSMI, Q2 2026: see the research">
               <rect class="hit" x="440" y="218" width="122" height="86"/>
-              <text class="big" x="448" y="250">62.7</text>
-              <text x="448" y="274">N-PSMI baseline</text>
+              <text class="big" x="448" y="250">63.5</text>
+              <text class="tight" x="448" y="274">N-PSMI, Q2 2026</text>
               <text class="note" x="448" y="294">index I designed</text>
             </a>
             <!-- horizontal dimension -->
@@ -527,20 +540,28 @@ html.viewer-open{overflow:hidden}
         <div class="reports">
           <article class="report lead">
             <div>
-              <h3>Nigeria Power Sector Intelligence Report, Q1 2026</h3>
-              <p class="meta">Nextier Power, October 2026. Sole author; designer of the index.</p>
-              <p>The first edition of the Nextier Nigeria Power Sector Market Index (N-PSMI), a weighted composite of generation, transmission, commercial and customer performance built entirely on public NERC data, with a fully published methodology.</p>
-              <p class="finding">Kaduna sharply accelerated meter deployment, yet its revenue recovery stayed at 37%. Metering is a precondition for commercial recovery, not a substitute for it.</p>
-              <!-- Swap this link for files/PSI_Q1_2026.pdf once Nextier approves hosting -->
-              <a class="go" href="https://thenextier.com/wp-content/uploads/2026/10/Nigeria-Power-Sector-Intelligence-Report_v2-1.pdf" target="_blank" rel="noopener">Read the report</a>
+              <h3>Nigeria Power Sector Intelligence Report, H1 2026</h3>
+              <p class="meta">Nextier Power, November 2026. Charts and data visualisation: Shalom Karunwi.</p>
+              <p>The second edition of the Nextier Nigeria Power Sector Market Index (N-PSMI) report, covering the first two quarters of 2026. It is organised by theme: who is paying for the grid, how much power actually arrived, what customers experienced, who sets the rules, the index itself, and what to watch in the second half.</p>
+              <p class="finding">Six DisCos improved in Q2, but Kano slid into the red zone.</p>
+              <a class="go" href="https://thenextier.com/wp-content/uploads/2026/11/18112026_Nigeria-Power-Sector-Intelligence-Report-H1-2026_Power.pdf" target="_blank" rel="noopener">Read the report</a>
             </div>
-            <div class="score" aria-label="N-PSMI scorecard, Q1 2026">
-              <p class="score-total">62.7<small>of 100, Challenged band</small></p>
-              <span>Commercial viability</span><div class="bar"><i style="width:72.3%"></i></div>
-              <span>Grid and transmission</span><div class="bar"><i style="width:69.5%"></i></div>
-              <span>Customer service</span><div class="bar red"><i style="width:53.7%"></i></div>
-              <span>Generation</span><div class="bar red"><i style="width:51.4%"></i></div>
+            <div class="score" aria-label="N-PSMI scorecard, Q2 2026">
+              <p class="score-total">63.5<small>of 100</small></p>
+              <span>Commercial viability</span><div class="bar"><i style="width:73.57%"></i></div>
+              <span>Grid and transmission</span><div class="bar"><i style="width:71.47%"></i></div>
+              <span>Customer service</span><div class="bar red"><i style="width:54.32%"></i></div>
+              <span>Generation</span><div class="bar red"><i style="width:51.08%"></i></div>
             </div>
+          </article>
+          <article class="report">
+            <h3>Nigeria Power Sector Intelligence Report, Q1 2026</h3>
+            <p class="meta">Nextier Power, October 2026. Sole author; designer of the index.</p>
+            <p>The first edition of the Nextier Nigeria Power Sector Market Index (N-PSMI), a weighted composite of generation, transmission, commercial and customer performance built entirely on public NERC data, with a fully published methodology.</p>
+            <p class="finding">Kaduna sharply accelerated meter deployment, yet its revenue recovery stayed at 37%. Metering is a precondition for commercial recovery, not a substitute for it.</p>
+            <p class="restated">Restated to 63.0 after NERC revised Q1 meter installations.</p>
+            <!-- Swap this link for files/PSI_Q1_2026.pdf once Nextier approves hosting -->
+            <a class="go" href="https://thenextier.com/wp-content/uploads/2026/10/Nigeria-Power-Sector-Intelligence-Report_v2-1.pdf" target="_blank" rel="noopener">Read the report</a>
           </article>
           <article class="report">
             <h3>Nigeria Power Sector Intelligence Report, H1 2025</h3>
@@ -595,6 +616,22 @@ html.viewer-open{overflow:hidden}
         <p>Things I built, mostly because I wanted to</p>
       </header>
       <div class="sheet-body">
+        <article class="project">
+          <div>
+            <h3>Financial inclusion survey dashboard for smallholder farmers</h3>
+            <p class="meta">EFInA, 2026</p>
+            <p>An Excel dashboard for a survey of 369 smallholder farmers in Bauchi, Kano and Ebonyi, commissioned for a financial inclusion strategy and a review of the Bank of Agriculture's products and solutions. It reports ten survey sections, from digital access and financial goals to credit, insurance and awareness of the bank's products.</p>
+            <p>Seven slicers (state, gender, age, residence, land size, employment status and relationship with the bank) filter every figure on the page at once. Each figure is a live formula over one clean table, so there is no Data Model or Power Pivot, and it opens and updates on a Mac.</p>
+            <p>The raw survey export had 446 columns. I cleaned it into one row per respondent and set a stated percentage base for every question. All 504 dashboard counts were recomputed independently and matched, with and without filters applied.</p>
+            <ul class="stack"><li>Excel</li><li>Slicers</li><li>COUNTIFS</li><li>Survey data cleaning</li></ul>
+          </div>
+          <div class="embed shot">
+            <div class="shot-scroll" tabindex="0" role="region" aria-label="Dashboard screenshot. Scroll sideways to see all of it.">
+              <img src="files/graphics/efina-dashboard.png" alt="The Excel survey dashboard: a row of seven slicers across the top, links to the ten survey sections, and headline figures below" width="1262" height="540" loading="lazy">
+            </div>
+            <div class="embed-cap"><span class="hint-m">Scroll sideways to see all of it</span><span class="hint-d">Dashboard, as delivered</span><a href="files/graphics/efina-dashboard.png" data-modal-image data-title="Financial inclusion survey dashboard" target="_blank" rel="noopener">Open larger</a></div>
+          </div>
+        </article>
         <article class="project">
           <div>
             <figure class="photo cover"><img src="files/graphics/cover-attribution.png" alt="" width="1280" height="800" loading="lazy" onerror="this.parentNode.classList.add('missing')"><span class="ph">Drawing to add: files/graphics/cover-attribution.png</span></figure>
@@ -1947,11 +1984,26 @@ html.viewer-open{overflow:hidden}
     document.documentElement.classList.add("viewer-open"); dlg.showModal(); x.focus();
   })});
   dlg.addEventListener("keydown",function(e){
-    if(!body.classList.contains("is-image")) return;
+    if(!body.classList.contains("is-image")||body.classList.contains("is-single")) return;
     if(e.key==="ArrowRight"){go(1);e.preventDefault()} else if(e.key==="ArrowLeft"){go(-1);e.preventDefault()}
   });
-  var sx=null; body.addEventListener("touchstart",function(e){if(body.classList.contains("is-image")) sx=e.touches[0].clientX},{passive:true});
+  var sx=null; body.addEventListener("touchstart",function(e){if(body.classList.contains("is-image")&&!body.classList.contains("is-single")) sx=e.touches[0].clientX},{passive:true});
   body.addEventListener("touchend",function(e){if(sx===null) return; var dx=e.changedTouches[0].clientX-sx; sx=null; if(Math.abs(dx)>50) go(dx<0?1:-1)});
+})();
+/* Single image in the pop-up (the EFInA dashboard) */
+(function(){
+  var dlg=document.getElementById("viewer"); if(!dlg||typeof dlg.showModal!=="function") return;
+  var title=dlg.querySelector("#viewer-title"),body=dlg.querySelector(".viewer-body"),link=dlg.querySelector(".viewer-link"),x=dlg.querySelector(".viewer-x");
+  document.addEventListener("click",function(e){
+    var a=e.target.closest("[data-modal-image]");
+    if(!a||e.metaKey||e.ctrlKey||e.shiftKey) return;
+    e.preventDefault();
+    title.textContent=a.getAttribute("data-title")||"";
+    body.className="viewer-body is-image is-single"; body.innerHTML="";
+    var img=document.createElement("img"); img.src=a.getAttribute("href"); img.alt=a.getAttribute("data-title")||""; body.appendChild(img);
+    link.textContent="Open image"; link.href=a.getAttribute("href"); link.target="_blank"; link.rel="noopener"; link.removeAttribute("download");
+    document.documentElement.classList.add("viewer-open"); dlg.showModal(); x.focus();
+  });
 })();
 /* Motion: section reveal and focus list (IntersectionObserver, no scroll listeners) */
 (function(){
