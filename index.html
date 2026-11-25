@@ -29,6 +29,8 @@
   --hero-bg:#1F2326; --hero-ink:#EEEAE3; --hero-muted:#A7ACA8;
   --sheet-radius:22px; --grid-opacity:.4;
   --flaps-h:0px;            /* height of the sticky flap strip, set when it goes sticky */
+  /* Motion */
+  --ease:cubic-bezier(.2,.7,.2,1); --reveal-rise:16px; --reveal-time:.45s; --dim:.55;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -384,6 +386,17 @@ html.viewer-open{overflow:hidden}
   .dims text{font-size:21px}
   .dims text.note{font-size:19px}
   .dims text.big{font-size:36px}
+}
+/* Motion inside each sheet. Only runs when the script adds .motion to <html>, which it never does under reduced motion.
+   Section reveal: each block fades and rises once as it enters. Focus list: on long lists the item at the
+   vertical centre of the screen stays full ink and its neighbours fade. Opacity and transform only. */
+.motion .reveal{opacity:0;transform:translateY(var(--reveal-rise));transition:opacity var(--reveal-time) var(--ease),transform var(--reveal-time) var(--ease)}
+.motion .reveal.is-in{opacity:1;transform:none}
+/* Focus list runs on phones only (below 768px); tablet and desktop keep every item full ink. */
+@media (max-width:767px){
+  .motion .focus-list > *{transition:opacity .45s ease,transform var(--reveal-time) var(--ease)}
+  .motion .focus-list.is-focusing > :not(.is-focus){opacity:var(--dim)}
+  .motion .focus-list.is-focusing > :hover,.motion .focus-list.is-focusing > :focus-within{opacity:1}
 }
 </style>
 </head>
@@ -1895,6 +1908,54 @@ html.viewer-open{overflow:hidden}
   });
   var sx=null; body.addEventListener("touchstart",function(e){if(body.classList.contains("is-image")) sx=e.touches[0].clientX},{passive:true});
   body.addEventListener("touchend",function(e){if(sx===null) return; var dx=e.changedTouches[0].clientX-sx; sx=null; if(Math.abs(dx)>50) go(dx<0?1:-1)});
+})();
+/* Motion: section reveal and focus list (IntersectionObserver, no scroll listeners) */
+(function(){
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)");
+  if(reduce.matches||!("IntersectionObserver" in window)) return;
+  var root=document.documentElement; root.classList.add("motion");
+  if(reduce.addEventListener) reduce.addEventListener("change",function(e){root.classList.toggle("motion",!e.matches)});
+
+  var blocks=".sheet-up > *, .report, .contrib, .project, .guided-head, .gp, .toolkit > div, .slides-intro, .redact-note, .deck, .talk, .podcast > *, .about > div > *, .certs, .contact > *";
+  var reveal=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("is-in"); reveal.unobserve(e.target) } });
+  },{rootMargin:"0px 0px -6% 0px"});
+  document.querySelectorAll(blocks).forEach(function(el){ el.classList.add("reveal"); reveal.observe(el) });
+
+  /* A thin band across the middle of the screen; whatever item sits in it is in focus. */
+  var focus=new IntersectionObserver(function(entries){
+    var touched=[];
+    entries.forEach(function(e){
+      var list=e.target.parentNode, inBand=list._inBand||(list._inBand=[]), i=inBand.indexOf(e.target);
+      if(e.isIntersecting&&i<0) inBand.push(e.target); else if(!e.isIntersecting&&i>-1) inBand.splice(i,1);
+      if(touched.indexOf(list)<0) touched.push(list);
+    });
+    touched.forEach(function(list){
+      if(list._inBand.length) setFocus(list,list._inBand); /* between items: keep the last one in focus */
+    });
+  },{rootMargin:"-49% 0px -49% 0px"});
+  function setFocus(list,items){
+    list.classList.add("is-focusing");
+    Array.prototype.forEach.call(list.children,function(c){ c.classList.toggle("is-focus",items.indexOf(c)>-1) });
+  }
+  var lists=document.querySelectorAll(".contrib ul, .path");
+  lists.forEach(function(list){
+    list.classList.add("focus-list");
+    Array.prototype.forEach.call(list.children,function(c){ focus.observe(c) });
+  });
+
+  /* A list that ends near the bottom of a sheet never reaches the centre band, so once the sheet's
+     title block is fully in view, hand focus to any last item still sitting below the centre. */
+  var end=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      e.target.parentNode.querySelectorAll(".focus-list").forEach(function(list){
+        var last=list.lastElementChild, r=last.getBoundingClientRect();
+        if(e.isIntersecting&&r.top>window.innerHeight/2&&r.bottom<=window.innerHeight) setFocus(list,[last]);
+        else if(!e.isIntersecting&&list._inBand&&list._inBand.length) setFocus(list,list._inBand);
+      });
+    });
+  },{threshold:1});
+  document.querySelectorAll(".page > .titleblock").forEach(function(tb){ end.observe(tb) });
 })();
 </script>
 </body>
